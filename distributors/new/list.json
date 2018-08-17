@@ -1,18 +1,18 @@
 [
   {
     "name": "Le Pacte",
-    "search-strings": ["pacte"]
+    "searchStrings": ["pacte"]
   },
   {
     "name": "Pyramide Distribution",
-    "search-strings": ["piramide"]
+    "searchStrings": ["piramide"]
   },
   {
     "name": "20th Century Fox France",
-    "search-strings": ["twenty"]
+    "searchStrings": ["twenty"]
   },
   {
     "name": "Shellac",
-    "alternative-names": ["shelac"]
+    "searchStrings": ["shelac"]
   }
 ]
