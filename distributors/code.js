@@ -1,6 +1,6 @@
 $(document).ready(() => {
 
-  $.getJSON(`https://ewauq.github.io/distributors/new/list.json?${Date.now()}`, (json) => {
+  $.getJSON(`https://ewauq.github.io/distributors/list.json?${Date.now()}`, (json) => {
     console.log("[DEBUG]", "Success");
   })
 
