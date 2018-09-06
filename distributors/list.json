@@ -771,5 +771,13 @@
     "channels": [
         "https://www.youtube.com/channel/UCuJLNmxidw1HsAupTilW0JA"
     ]
+  },
+  {
+    "name": "Next Film Distribution",
+    "sorting_name": "next film distribution",
+    "website": "http://nextfilmdistribution.com/",
+    "channels": [
+        "https://vimeo.com/nextfilmdistribution"
+    ]
   }
 ]
