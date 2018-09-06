@@ -55,5 +55,13 @@
         "https://www.youtube.com/user/paradisfilmsvideos",
         "https://vimeo.com/paradisfilms"
     ]
+  },
+  {
+    "name": "Condor Distribution",
+    "website": "https://www.condor-films.fr/",
+    "channels": [
+        "https://www.youtube.com/channel/UCLuGnNY8cOokcqJgPQPt1dA",
+        "https://www.youtube.com/user/CondorOfficial/featured"
+    ]
   }
 ]
