@@ -47,5 +47,13 @@
     "channels": [
         "https://www.youtube.com/channel/UCeoWiQi_n0-KXEuCtCfX40w"
     ]
+  },
+  {
+    "name": "Paradis Films",
+    "website": "http://paradisfilms.com/",
+    "channels": [
+        "https://www.youtube.com/user/paradisfilmsvideos",
+        "https://vimeo.com/paradisfilms"
+    ]
   }
 ]
