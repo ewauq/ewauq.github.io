@@ -3,70 +3,49 @@
     "name": "20th Century Fox France",
     "website": "http://www.foxfrance.com/",
     "channels": [
-      {
-        "name": "YouTube",
-        "url": "https://www.youtube.com/channel/UCmLpWGO9eyDugKPxLSYW3kQ"
-      }
+      "https://www.youtube.com/channel/UCmLpWGO9eyDugKPxLSYW3kQ"
     ]
   },
   {
     "name": "A3 Distribution",
     "website": "http://a3distribution.com/",
     "channels": [
-      {
-        "name": "YouTube",
-        "url": "https://www.youtube.com/channel/UCJ8O-CZCdoZhECsjiCtL83w"
-      }
+      "https://www.youtube.com/channel/UCJ8O-CZCdoZhECsjiCtL83w"
     ]
   },
   {
     "name": "Aanna Films",
     "website": "http://aannafilms.fr/",
     "channels": [
-      {
-        "name": "YouTube",
-        "url": "https://www.youtube.com/user/AannaFilms/videos"
-      }
+        "https://www.youtube.com/user/AannaFilms/videos"
     ]
   },
   {
     "name": "BAC Films",
     "website": "http://www.bacfilms.com/distribution/fr",
     "channels": [
-      {
-        "name": "YouTube",
-        "url": "https://www.youtube.com/channel/UCZ-TP7kN2zasu9f_ORRXUfw"
-      }
+        "https://www.youtube.com/channel/UCZ-TP7kN2zasu9f_ORRXUfw"
     ]
   },
   {
     "name": "Océan Films Distribution",
     "website": "https://www.ocean-films.com/",
     "channels": [
-      {
-        "name": "YouTube",
-        "url": "https://www.youtube.com/channel/UClo8rFoAJscq11MjoM3CbUQ"
-      }
+        "https://www.youtube.com/channel/UClo8rFoAJscq11MjoM3CbUQ"
     ]
   },
   {
     "name": "Damned Distribution",
     "website": "http://www.damneddistribution.com/",
     "channels": [
-      {
-        "name": "Vimeo",
-        "url": "https://vimeo.com/user7999677"
-      }
+        "https://vimeo.com/user7999677"
     ]
   },
   {
     "name": "Bellissima Films",
     "website": "https://www.bellissima-films.com/",
     "channels": [
-      {
-        "name": "YouTube",
-        "url": "https://www.youtube.com/channel/UCeoWiQi_n0-KXEuCtCfX40w"
-      }
+        "https://www.youtube.com/channel/UCeoWiQi_n0-KXEuCtCfX40w"
     ]
   }
 ]
