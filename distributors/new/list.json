@@ -58,5 +58,15 @@
         "url": "https://vimeo.com/user7999677"
       }
     ]
+  },
+  {
+    "name": "Bellissima Films",
+    "website": "https://www.bellissima-films.com/",
+    "channels": [
+      {
+        "name": "YouTube",
+        "url": "https://www.youtube.com/channel/UCeoWiQi_n0-KXEuCtCfX40w"
+      }
+    ]
   }
 ]
