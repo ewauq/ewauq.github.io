@@ -48,5 +48,15 @@
         "url": "https://www.youtube.com/channel/UClo8rFoAJscq11MjoM3CbUQ"
       }
     ]
+  },
+  {
+    "name": "Damned Distribution",
+    "website": "http://www.damneddistribution.com/",
+    "channels": [
+      {
+        "name": "Vimeo",
+        "url": "https://vimeo.com/user7999677"
+      }
+    ]
   }
 ]
