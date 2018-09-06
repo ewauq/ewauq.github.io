@@ -63,5 +63,180 @@
         "https://www.youtube.com/channel/UCLuGnNY8cOokcqJgPQPt1dA",
         "https://www.youtube.com/user/CondorOfficial/featured"
     ]
+  },
+  {
+    "name": "Ad Vitam Distribution",
+    "website": "http://www.advitamdistribution.com/",
+    "channels": [
+        "https://www.youtube.com/channel/UCV1bnw3keR-u71KOZh2ak8Q"
+    ]
+  },
+  {
+    "name": "Alfama Films",
+    "website": "http://alfamafilms.com/",
+    "channels": [
+        "https://www.youtube.com/user/ALFAMAFILMS"
+    ]
+  },
+  {
+    "name": "Aloha Distribution",
+    "website": "http://www.alohadistrib.fr/",
+    "channels": [
+        "https://vimeo.com/user68062608"
+    ]
+  },
+  {
+    "name": "Aramis Films",
+    "website": "http://www.aramisfilms.fr/",
+    "channels": [
+        "https://www.youtube.com/channel/UC9VyjriK7jgB40kLIZgDukQ"
+    ]
+  },
+  {
+    "name": "Arc en Ciel Films",
+    "website": "",
+    "channels": [
+        "https://www.youtube.com/channel/UC2beA2B4FI5EKA-tHQsxY1A"
+    ]
+  },
+  {
+    "name": "Arizona Films Distribution",
+    "website": "http://www.arizonafilms.fr/",
+    "channels": [
+        "https://www.youtube.com/channel/UCsMFRI3VNNUqrtF0ezYIMxQ"
+    ]
+  },
+  {
+    "name": "ARP Selection",
+    "website": "http://www.arpselection.com/",
+    "channels": [
+        "https://www.youtube.com/channel/UCT4EwnjIB8Iclg0TbsdD53w"
+    ]
+  },
+  {
+    "name": "Arsenal Productions",
+    "website": "http://www.arsenal-productions.com/",
+    "channels": [
+        "https://www.youtube.com/channel/UCrmui6HQ4bIoEcLZ7XvTlWw"
+    ]
+  },
+  {
+    "name": "Art House",
+    "website": "http://www.arthouse-films.fr/",
+    "channels": [
+        "https://vimeo.com/user54496588"
+    ]
+  },
+  {
+    "name": "ASC Distribution",
+    "website": "http://ascdistribution.com/",
+    "channels": [
+        "https://www.youtube.com/channel/UCUOu4Ko3fZA_Mfuv9_Ac44w"
+    ]
+  },
+  {
+    "name": "Blue Bird Distribution",
+    "website": "http://bluebird-films.com/",
+    "channels": [
+        "https://vimeo.com/user65308363"
+    ]
+  },
+  {
+    "name": "Blue Moon",
+    "website": "",
+    "channels": [
+        "https://www.youtube.com/channel/UC754NWR2oM2Xqb06_WIS-sQ"
+    ]
+  },
+  {
+    "name": "Bodega Films",
+    "website": "http://www.bodegafilms.com/",
+    "channels": [
+        "https://vimeo.com/user25404367"
+    ]
+  },
+  {
+    "name": "Carlotta Films",
+    "website": "http://carlottavod.com/",
+    "channels": [
+        "https://www.youtube.com/channel/UCz_B_mtwN-KcbJc8IrRtfqQ"
+    ]
+  },
+  {
+    "name": "Chrysalis Films",
+    "website": "http://www.chrysalis-films.com/",
+    "channels": [
+        "https://www.youtube.com/channel/UCyaHtwBD0O0tbO2Pu3PYKQg"
+    ]
+  },
+  {
+    "name": "Cinéma Public Films",
+    "website": "http://www.cinemapublicfilms.fr/",
+    "channels": [
+        "https://www.youtube.com/channel/UC9Uk7VIOkngT141UK5mSNsw"
+    ]
+  },
+  {
+    "name": "Damned Distribution",
+    "website": "http://www.damneddistribution.com/",
+    "channels": [
+        "https://vimeo.com/user7999677"
+    ]
+  },
+  {
+    "name": "Diaphana Distribution",
+    "website": "http://diaphana.fr/",
+    "channels": [
+        "https://www.youtube.com/user/DiaphanaFilms"
+    ]
+  },
+  {
+    "name": "Disney France",
+    "website": "http://www.corporate.disney.fr/",
+    "channels": [
+        "https://www.youtube.com/channel/UCakQLdwrxuo0KhJ49Sq2csA"
+    ]
+  },
+  {
+    "name": "Distrib Films",
+    "website": "http://www.distribfilms.com/fr",
+    "channels": [
+        "https://www.youtube.com/channel/UCY6hYjl8yCS1vDe930lNHgA"
+    ]
+  },
+  {
+    "name": "Epicentre Films",
+    "website": "http://www.epicentrefilms.com/",
+    "channels": [
+        "https://www.youtube.com/channel/UCrJKRz-IEnKLRAlkIhQtcgg"
+    ]
+  },
+  {
+    "name": "ED Distribution",
+    "website": "https://www.eddistribution.com/",
+    "channels": [
+        "https://vimeo.com/eddistribution"
+    ]
+  },
+  {
+    "name": "Elévation-Prod",
+    "website": "",
+    "channels": [
+        "https://www.youtube.com/channel/UCiRW3WqvYD5UuyJdxWnbH7A"
+    ]
+  },
+  {
+    "name": "EUROPACORP",
+    "website": "http://www.europacorp.com/",
+    "channels": [
+        "https://www.youtube.com/channel/UCVHpE5vFRVjoAiZeJjLh7qQ"
+    ]
+  },
+  {
+    "name": "EUROZOOM",
+    "website": "http://www.eurozoomcine.com/",
+    "channels": [
+        "https://www.youtube.com/user/Ezmdist"
+    ]
   }
 ]
