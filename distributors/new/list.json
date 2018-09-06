@@ -1,18 +1,52 @@
 [
   {
-    "name": "Le Pacte",
-    "searchStrings": ["pacte"]
-  },
-  {
-    "name": "Pyramide Distribution",
-    "searchStrings": ["piramide"]
-  },
-  {
     "name": "20th Century Fox France",
-    "searchStrings": ["twenty"]
+    "website": "http://www.foxfrance.com/",
+    "channels": [
+      {
+        "name": "YouTube",
+        "url": "https://www.youtube.com/channel/UCmLpWGO9eyDugKPxLSYW3kQ"
+      }
+    ]
   },
   {
-    "name": "Shellac",
-    "searchStrings": ["shelac"]
+    "name": "A3 Distribution",
+    "website": "http://a3distribution.com/",
+    "channels": [
+      {
+        "name": "YouTube",
+        "url": "https://www.youtube.com/channel/UCJ8O-CZCdoZhECsjiCtL83w"
+      }
+    ]
+  },
+  {
+    "name": "Aanna Films",
+    "website": "http://aannafilms.fr/",
+    "channels": [
+      {
+        "name": "YouTube",
+        "url": "https://www.youtube.com/user/AannaFilms/videos"
+      }
+    ]
+  },
+  {
+    "name": "BAC Films",
+    "website": "http://www.bacfilms.com/distribution/fr",
+    "channels": [
+      {
+        "name": "YouTube",
+        "url": "https://www.youtube.com/channel/UCZ-TP7kN2zasu9f_ORRXUfw"
+      }
+    ]
+  },
+  {
+    "name": "Océan Films Distribution",
+    "website": "https://www.ocean-films.com/",
+    "channels": [
+      {
+        "name": "YouTube",
+        "url": "https://www.youtube.com/channel/UClo8rFoAJscq11MjoM3CbUQ"
+      }
+    ]
   }
 ]
