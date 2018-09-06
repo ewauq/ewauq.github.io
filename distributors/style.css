@@ -1,0 +1,146 @@
+* {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-size: 0;
+}
+
+html, body {
+  height:100%;
+  background-color: #f1f5f8;
+}
+
+
+
+
+header {
+  background-color: #343031;
+  padding: 40px;
+  box-shadow: 0 0 8px #00000080;
+  z-index: 100;
+  position: relative;
+ }
+
+ header .title {
+   font-size: 34px;
+   font-family: 'PT Sans Narrow', sans-serif;
+   color: white;
+ }
+
+  .sorter {
+    background-color: #343031;
+    text-align: center;
+    z-index: 50;
+  }
+
+ .sorter span {
+   display: inline-block;
+   font-family: 'Arial', sans-serif;
+   font-size: 22px;
+   padding: 16px;
+   color: #c6c6c6;
+ }
+
+ .sorter span:hover {
+   cursor: pointer;
+   color: #fff;
+ }
+
+  .sorter span.active {
+    color: #fff;
+    box-shadow: inset 0px -4px 0px #ffce00;
+  }
+
+
+
+
+
+
+
+
+
+
+main {
+  margin: 30px auto;
+  width: 80%;
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: #0000001a 0 0 4px;
+}
+
+main section {
+  display: inline-block;
+  vertical-align: top;
+  width: 20%;
+  margin-bottom: 60px;
+}
+
+main li {
+  list-style-type: none;
+}
+
+main li a, main li span {
+  font-family: Arial, Tahoma, Geneva, Verdana, sans-serif;
+  color: #4a5695;
+  font-size: 14px;
+  text-decoration: none;
+  display: inline-block;
+  padding: 6px;
+}
+
+main li span {
+  color: #8f3737;
+}
+
+main li a:hover, main li a.channel:hover {
+  text-decoration: underline;
+}
+
+main li a.channel {
+  color: #0faa68;
+  font-size: 10px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+main li.empty-section {
+  font-family: Arial, Tahoma, Geneva, Verdana, sans-serif;
+  color: #b1b1b1;
+  font-size: 12px;
+  font-style: italic;
+  margin-top: 20px;
+}
+
+h1 {
+  font-family: 'PT Sans Narrow', sans-serif;
+  font-size: 32px;
+  color: #515151;
+  font-weight: normal;
+  border-bottom: 1px solid #e9e9e9;
+  padding: 0 0 30px 0;
+  margin-bottom: 30px;
+}
+
+h2 {
+  font-family: 'Arial', sans-serif;
+  font-size: 34px;
+  color: #515151;
+  font-weight: normal;
+}
+
+footer {
+  font-size: 12px;
+  color: #ababab;
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  margin: 20px;
+}
+
+footer a {
+  font-size: 12px;
+  color: #ababab;
+  text-decoration: none;
+}

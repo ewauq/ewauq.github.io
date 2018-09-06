@@ -1,603 +1,238 @@
-
-				<html>
-					<head>
-						<title>Liste des distributeurs de films</title>
-						<style>
-							body {
-								font-family:Arial Unicode MS, sans-serif, sans !important;
-								font-size: 13px !important;
-							}
-							/*
-
-	Any user content such as Messages/Comments/Notebooks need to use these consistant styles
-
-*/
-
-span.bqhandle {
-	background-color:#BEBEBE;
-	clear: both;
-	text-align:center;
-	color: #fff;
-	cursor: pointer;
-	display: block;
-	font-family: arial, sans-serif;
-	font-size: 14px;
-	font-weight:bold;
-	height: 10px;
-	line-height: 3px;
-	border-radius:2px;
-	margin-bottom: 0;
-	margin-left: 0;
-	margin-right: 0;
-	margin-top: 0;
-	outline-color: #222;
-	outline-style: none;
-	outline-width: 0;
-	padding-bottom: 0;
-	padding-left: 0;
-	padding-right: 0;
-	padding-top: 0;
-	position: relative;
-	width: 20px;
-}
-
-span.bqhandle:hover {
-	background-color:#888;
-}
-
-blockquote.bqCollapsed {
-	display:none;
-}
-
-blockquote.bqExpanded {
-	display:block;
-}
-
-/* Formatting */
-body .sectionContent div.formatted, body .sectionContent div.redactor-editor, body .sectionContent div.fr-view {
-  font-family: Helvetica, arial, sans-serif !important;
-  font-size: 14px !important;
-  line-height: 1.6 !important;
-  color: #333;  
-  word-break: break-word; 
-}
-
-body .sectionContent div.fr-wrapper span.fr-placeholder {
-  padding-left:0 !important;
-  padding-top:0 !important;
-}
-
-.generic-theme.fr-box.fr-basic .fr-wrapper .fr-placeholder {
-  top: 10px;
-  left: 10px;
-  padding:0!important;
-}
-
-.notebook-theme.fr-box.fr-basic .fr-wrapper .fr-placeholder {
-  top: 10px;
-  left: 10px;
-  padding:0 !important;
-}
-
-@-moz-document url-prefix() {
-  body .sectionContent div.formatted, body .sectionContent div.redactor-editor{        
-    
-  }
-}
-
-body .sectionContent form div.redactor-editor p, body .sectionContent form div.fr-view p {
-  font-family: Helvetica, arial, sans-serif !important;
-  font-size: 14px !important;
-  line-height: 1.6 !important;
-  color: #333 !important;   
-  margin: 0 0 15px 0;
-}
-
-body .sectionContent div.formatted a, body .sectionContent div.redactor-editor a, body .sectionContent div.fr-view a {
-  color: #4183C4;
-  text-decoration: none;
-}
-
-body .sectionContent div.formatted a:hover, body .sectionContent div.redactor-editor a:hover, body .sectionContent div.fr-view a:hover {
-  text-decoration:underline;
-}
-
-body .sectionContent div.formatted a.absent, body .sectionContent div.redactor-editor a.absent, body .sectionContent div.fr-view a.absent {
-  color: #cc0000;
-}
-
-body .sectionContent div.formatted a.anchor, body .sectionContent div.redactor-editor a.anchor, body .sectionContent div.fr-view a.anchor {
-  display: block;
-  padding-left: 30px;
-  margin-left: -30px;
-  cursor: pointer;
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-}
-
-body .sectionContent div.formatted h1, body .sectionContent div.formatted h2, body .sectionContent div.formatted h3, body .sectionContent div.formatted h4, body .sectionContent div.formatted h5, body .sectionContent div.formatted h6,
-body .sectionContent div.fr-view h1, body .sectionContent div.fr-view h2, body .sectionContent div.fr-view h3, body .sectionContent div.fr-view h4, body .sectionContent div.fr-view h5, body .sectionContent div.fr-view h6,
-body .sectionContent ul.fr-dropdown-list h1, body .sectionContent ul.fr-dropdown-list h2, body .sectionContent ul.fr-dropdown-list h3, body .sectionContent ul.fr-dropdown-list h4, body .sectionContent ul.fr-dropdown-list h5, body .sectionContent ul.fr-dropdown-list h6
- {
-  margin: 20px 0 10px !important;
-  font-weight:bold!important;
-  padding: 0 !important;
-  -webkit-font-smoothing: antialiased;
-  cursor: text;
-  position: relative;
-  font-family: Helvetica, arial, sans-serif !important;
-  background:none !important;
-  border:none !important;
-}
-
-/* Froala editor specific */
-body .sectionContent ul.fr-dropdown-list h1 {
-  font-size: 28px!important;
-}
-
-body .sectionContent ul.fr-dropdown-list h2 {
-  font-size: 24px!important;    
-} 
-
-body .sectionContent ul.fr-dropdown-list h3 {
-  font-size: 18px!important;
-}
-
-body .sectionContent ul.fr-dropdown-list h4 {
-  font-size: 16px!important;
-} 
-
-body .sectionContent div.formatted h2:first-child, body .sectionContent div.formatted h1:first-child, body .sectionContent div.formatted h1:first-child + h2, body .sectionContent div.formatted h3:first-child, body .sectionContent div.formatted h4:first-child, body .sectionContent div.formatted h5:first-child, body .sectionContent div.formatted h6:first-child {
-  margin-top: 10px !important;
-  padding-top: 0 !important;
-}
-
-body .sectionContent div.formatted h1:hover a.anchor, body .sectionContent div.formatted h2:hover a.anchor, body .sectionContent div.formatted h3:hover a.anchor, body .sectionContent div.formatted h4:hover a.anchor, body .sectionContent div.formatted h5:hover a.anchor, body .sectionContent div.formatted h6:hover a.anchor {
-  text-decoration: none;
-}
-
-body .sectionContent div.formatted h1 tt, body .sectionContent div.formatted h1 code {
-  font-size: inherit;
-}
-
-body .sectionContent div.formatted h2 tt, body .sectionContent div.formatted h2 code {
-  font-size: inherit;
-}
-
-body .sectionContent div.formatted h3 tt, body .sectionContent div.formatted h3 code {
-  font-size: inherit;
-}
-
-body .sectionContent div.formatted h4 tt, body .sectionContent div.formatted h4 code {
-  font-size: inherit;
-}
-
-body .sectionContent div.formatted h5 tt, body .sectionContent div.formatted h5 code {
-  font-size: inherit;
-}
-
-body .sectionContent div.formatted h6 tt, body .sectionContent div.formatted h6 code {
-  font-size: inherit;
-}
-
-body .sectionContent div.formatted h1 {
-  font-size: 28px !important;
-  color: black;
-}
-
-body .sectionContent div.formatted h2 {
-  font-size: 24px !important;
-  border-bottom: 1px solid #CCC;
-  color: black !important;
-}
-
-body .sectionContent div.formatted h3 {
-  font-size: 18px !important;
-}
-
-body .sectionContent div.formatted h4 {
-  font-size: 16px !important;
-}
-
-body .sectionContent div.formatted h5 {
-  font-size: 14px !important;
-}
-
-body .sectionContent div.formatted h6 {
-  color: #777 !important;
-  font-size: 14px !important;
-}
-
-body .sectionContent div.formatted p div {
-  margin: 0 0 10px 0;  
-}
-
-body .sectionContent div.formatted p {
-  margin:10px 0px;
-  word-break: break-word;
-}
-
-
-
-body .sectionContent div.formatted hr {
-  border: 0 none;
-  background-color: #CCC;
-  height: 2px;
-  padding: 0;
-}
-
-body .sectionContent div.formatted  > h2:first-child {
-  margin-top: 0;
-  padding-top: 0;
-}
-
-body .sectionContent div.formatted  > h1:first-child {
-  margin-top: 0;
-  padding-top: 0;
-}
-
-body .sectionContent div.formatted  > h1:first-child + h2 {
-  margin-top: 0;
-  padding-top: 0;
-}
-
-body .sectionContent div.formatted  > h3:first-child, body .sectionContent div.formatted  > h4:first-child, body .sectionContent div.formatted  > h5:first-child, body .sectionContent div.formatted  > h6:first-child {
-  margin-top: 0;
-  padding-top: 0;
-}
-
-body .sectionContent div.formatted a:first-child h1, body .sectionContent div.formatted a:first-child h2, body .sectionContent div.formatted a:first-child h3, body .sectionContent div.formatted a:first-child h4, body .sectionContent div.formatted a:first-child h5, body .sectionContent div.formatted a:first-child h6 {
-  margin-top: 0;
-  padding-top: 0;
-}
-
-body .sectionContent div.formatted h1 p, body .sectionContent div.formatted h2 p, body .sectionContent div.formatted h3 p, body .sectionContent div.formatted h4 p, body .sectionContent div.formatted h5 p, body .sectionContent div.formatted h6 p {
-  margin-top: 0;
-}
-
-body .sectionContent div.formatted li p.first {
-  display: inline-block !important;
-}
-
-body .sectionContent div.formatted ul, body .sectionContent div.formatted ol, body .sectionContent .redactor-editor ul, body .sectionContent .redactor-editor ol, body .sectionContent .fr-view ul, body .sectionContent .fr-view ol {
-  padding-left: 30px !important;
-  margin-top:10px !important;
-  margin-bottom:10px !important;
-}
-
-body .sectionContent div.formatted ol ol li {
-  list-style-type: lower-alpha;
-}
-body .sectionContent div.formatted ol ol ol li {
-  list-style-type: lower-roman;
-}
-
-body .sectionContent div.formatted ul :first-child, body .sectionContent div.formatted ol :first-child, body .sectionContent .redactor-editor ul :first-child, body .sectionContent .redactor-editor ol :first-child, body .sectionContent .fr-view ul :first-child, body .sectionContent .fr-view ol :first-child {
-  margin-top: 0 !important;
-}
-
-body .sectionContent div.formatted ul :last-child, body .sectionContent div.formatted ol :last-child, body .sectionContent .redactor-editor ul :last-child, body .sectionContent .redactor-editor ol :last-child, body .sectionContent .fr-view ul :last-child, body .sectionContent .fr-view ol :last-child {
-  margin-bottom: 10px !important;
-}
-
-body .sectionContent div.formatted ul :last-child li, body .sectionContent div.formatted ol :last-child li {
-  margin-top:5px !important;
-  margin-bottom:5px !important;
-  line-height: 1.1 !important;
-}
-
-body .sectionContent div.formatted dl {
-  padding: 0 !important;
-}
-
-body .sectionContent div.formatted dl dt {
-  font-size: 14px;
-  font-weight: bold;
-  font-style: italic;
-  padding: 0;
-  margin: 15px 0 5px;
-}
-
-body .sectionContent div.formatted dl dt:first-child {
-  padding: 0;
-}
-
-body .sectionContent div.formatted dl dt > :first-child {
-  margin-top: 0;
-}
-
-body .sectionContent div.formatted dl dt > :last-child {
-  margin-bottom: 0;
-}
-
-body .sectionContent div.formatted dl dd {
-  margin: 0 0 15px;
-  padding: 0 15px;
-}
-
-body .sectionContent div.formatted dl dd > :first-child {
-  margin-top: 0;
-}
-
-body .sectionContent div.formatted dl dd > :last-child {
-  margin-bottom: 0;
-}
-
-body .sectionContent div.formatted blockquote, body .sectionContent .redactor-editor blockquote, body .sectionContent .fr-view blockquote {
-  border-left: 4px solid #DDD;
-  padding: 5px 10px !important;
-  color: #777;
-}
-
-body .sectionContent div.formatted blockquote p, body .sectionContent .redactor-editor blockquote p, body .sectionContent .fr-view blockquote p {
-  font-size:14px !important;
-  color: #777;
-}
-
-body .sectionContent div.formatted blockquote > :first-child, body .sectionContent .redactor-editor blockquote > :first-child, body .sectionContent .fr-view blockquote > :first-child {
-  margin-top: 0;
-}
-
-body .sectionContent div.formatted blockquote > :last-child, body .sectionContent .redactor-editor blockquote > :last-child, body .sectionContent .fr-view blockquote > :last-child {
-  margin-bottom: 0;
-}
-
-body .sectionContent div.formatted table, body .sectionContent div.formatted .fr-view table {
-  padding: 0;
-  word-break: normal; 
-}
-
-body .sectionContent div.formatted table tr, body .sectionContent div.formatted .fr-view table tr {
-  border-top: 1px solid #CCC;
-  background-color: white;
-  margin: 0;
-  padding: 0;
-}
-
-body .sectionContent div.formatted table tr:nth-child(2n), body .sectionContent div.formatted .fr-view table tr:nth-child(2n) {
-  background-color: #f8f8f8;
-}
-
-body .sectionContent div.formatted table tr th, body .sectionContent div.formatted .fr-view table tr th {
-  font-weight: bold;
-  border: 1px solid #CCC;
-  text-align: left;
-  margin: 0;
-  padding: 6px 13px;
-}
-
-body .sectionContent div.formatted table tr td, body .sectionContent div.formatted .fr-view table tr td {
-  border: 1px solid #CCC;
-  text-align: left;
-  margin: 0;
-  padding: 6px 13px;
-}
-
-body .sectionContent div.formatted table tr th :first-child, body .sectionContent div.formatted table tr td :first-child, body .sectionContent div.formatted .fr-view table tr td :first-child {
-  margin-top: 0;
-}
-
-body .sectionContent div.formatted table tr th :last-child, body .sectionContent div.formatted table tr td :last-child, body .sectionContent div.formatted .fr-view table tr td :last-child {
-  margin-bottom: 0;
-}
-
-body .sectionContent div.formatted p img, body .sectionContent div.formatted div img {
-  max-width: 100%;
-}
-
-body .sectionContent div.t_ContentContainer div.formatted img {
-  max-width: 100%;
-  width: auto;
-  height: auto;
-}
-
-body .sectionContent div.formatted span.frame {
-  display: block;
-  overflow: hidden;
-}
-
-body .sectionContent div.formatted span.frame > span {
-  border: 1px solid #DDD;
-  display: block;
-  float: left;
-  overflow: hidden;
-  margin: 13px 0 0;
-  padding: 7px;
-  width: auto;
-}
-
-body .sectionContent div.formatted span.frame span img {
-  display: block;
-  float: left;
-}
-
-body .sectionContent div.formatted span.frame span span {
-  clear: both;
-  color: #333;
-  display: block;
-  padding: 5px 0 0;
-}
-
-body .sectionContent div.formatted span.align-center {
-  display: block;
-  overflow: hidden;
-  clear: both;
-}
-
-body .sectionContent div.formatted span.align-center > span {
-  display: block;
-  overflow: hidden;
-  margin: 13px auto 0;
-  text-align: center;
-}
-
-body .sectionContent div.formatted span.align-center span img {
-  margin: 0 auto;
-  text-align: center;
-}
-
-body .sectionContent div.formatted span.align-right {
-  display: block;
-  overflow: hidden;
-  clear: both;
-}
-
-body .sectionContent div.formatted span.align-right > span {
-  display: block;
-  overflow: hidden;
-  margin: 13px 0 0;
-  text-align: right;
-}
-
-body .sectionContent div.formatted span.align-right span img {
-  margin: 0;
-  text-align: right;
-}
-
-body .sectionContent div.formatted span.float-left {
-  display: block;
-  margin-right: 13px;
-  overflow: hidden;
-  float: left;
-}
-
-span.float-left span {
-  margin: 13px 0 0;
-}
-
-body .sectionContent div.formatted span.float-right {
-  display: block;
-  margin-left: 13px;
-  overflow: hidden;
-  float: right;
-}
-
-body .sectionContent div.formatted span.float-right > span {
-  display: block;
-  overflow: hidden;
-  margin: 13px auto 0;
-  text-align: right;
-}
-
-body .sectionContent div.formatted code, body .sectionContent div.formatted tt, body .sectionContent div.redactor-editor pre, body .sectionContent .fr-view pre {
-  margin: 0 2px;
-  padding: 0 5px;
-  white-space: pre-wrap;
-  border: 1px solid #eaeaea;
-  background-color: #f8f8f8;
-  border-radius: 3px;
-}
-
-body .sectionContent div.formatted pre code, body .sectionContent div.formatted .fr-view pre code {
-  margin: 0;
-  padding: 0;
-  white-space: pre-wrap;
-  border: none;
-  background: transparent;
-}
-
-body .sectionContent div.formatted pre, body .sectionContent div.formatted .fr-view pre {
-  background-color: #f8f8f8;
-  border: 1px solid #CCC;
-  font-size: 13px;
-  line-height: 19px;
-  overflow: auto;
-  padding: 6px 10px;
-  border-radius: 3px;
-  white-space: pre-wrap;
-}
-
-body .sectionContent div.formatted .highlight pre {
-  background-color: #f8f8f8;
-  border: 1px solid #CCC;
-  font-size: 13px;
-  line-height: 19px;
-  overflow: auto;
-  padding: 6px 10px;
-  border-radius: 3px;
-}
-
-body .sectionContent div.redactor-editor code, body .sectionContent div.fr-view code {
-  border: 1px solid #eaeaea !important;
-  background-color: #f8f8f8 !important;
-  border-radius: 3px !important;
-}
-
-body .sectionContent div.formatted pre code, body .sectionContent div.formatted pre tt {
-  background-color: transparent;
-  border: none;
-}
-
-nobr {
-  white-space: normal !important;
-}
-
-body .sectionContent div.formatted table.borderless, body .sectionContent div.formatted table.borderless td, body .sectionContent div.formatted table.borderless th {
-  border:none !important;
-  padding:0px !important;
-  margin:0px !important;
-  background-color:transparent !important;
-}
-
-/* Diff Classes */
-span.diff-html-changed {
-  font-family: "Andale Mono" monospace;
-  font-size:80%;
-}
-
-span.diff-html-removed {
-  font-size:100%;
-  text-decoration:line-through;
-  color:#999;
-}
-
-span.diff-html-added {
-  font-size:100%;
-  background-color: #ccffcc; /* light green */
-}
-
-span.diff-html-added img {
-  border:10px solid #ccffcc;
-}
-
-*[dir="rtl"] {
-  direction: rtl !important;
-  unicode-bidi: embed !important;  
-  text-align:right!important;
-}
-
-.atwho-inserted {
-    display: inline-block;
-    border:1px solid #DBDBDB;
-    background-color:#E1E1E1;
-    color:#444;
-    border-radius: 5px;
-    font-size:12px;
-    padding:1px 2px;
-} body.pdf div.sectionContent div.formatted pre {
-	overflow:visible; /*Fixes issue in PDF export */
-}
-
-p {
-	font-family:Lucida Sans Unicode,Arial, sans-serif, sans !important;
-}
-						</style>
-						<meta charset="UTF-8" />
-					</head>
-
-					<body>
-
-						
-
-						<div class="sectionContent" style="padding:0 20px;">
-							<div class="formatted">
-								<div class="fr-view"><h3><span style="font-size: 24px;" data-mce-style="font-size: 24px;">Cinéma</span></h3><table style="width: 100%;" data-mce-style="width: 100%;" class="mce-item-table"><tbody><tr><td style="width: 25%; vertical-align: top;" data-mce-style="width: 25%; vertical-align: top;"><span style="font-size: 24px;" data-mce-style="font-size: 24px;">#</span><br><ul><li><a href="http://www.foxfrance.com/" style="color: #3572b0; text-decoration: none;" target="_blank" rel="noopener" data-mce-href="http://www.foxfrance.com/" data-mce-style="color: #3572b0; text-decoration: none;">20th Century Fox France</a> : <span style="font-size: 11px;" data-mce-style="font-size: 11px;"><a href="https://www.youtube.com/channel/UCmLpWGO9eyDugKPxLSYW3kQ" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/channel/UCmLpWGO9eyDugKPxLSYW3kQ"><strong>Youtube</strong></a></span><br></li></ul><span style="font-size: 24px;" data-mce-style="font-size: 24px;">A</span><ul><li><span style="font-size: 14px;" data-mce-style="font-size: 14px;"><a href="http://a3distribution.com/" target="_blank" rel="noopener" data-mce-href="http://a3distribution.com/">A3 Distribution</a> :&nbsp;</span><span style="font-size: 11px;" data-mce-style="font-size: 11px;"><a href="https://www.youtube.com/channel/UCJ8O-CZCdoZhECsjiCtL83w" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/channel/UCJ8O-CZCdoZhECsjiCtL83w"><strong>Youtube</strong></a></span><br></li><li><span style="font-size: 14px;" data-mce-style="font-size: 14px;"><a href="http://aannafilms.fr" target="_blank" rel="noopener" data-mce-href="http://aannafilms.fr">Aanna Films</a> :&nbsp;</span><span style="font-size: 11px;" data-mce-style="font-size: 11px;"><strong><a href="https://www.youtube.com/user/AannaFilms/videos" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/user/AannaFilms/videos">Youtube</a></strong></span><br></li><li><span style="font-size: 14px;" data-mce-style="font-size: 14px;"><a href="http://www.advitamdistribution.com/" target="_blank" rel="noopener" data-mce-href="http://www.advitamdistribution.com/">Ad Vitam Distribution</a> :&nbsp;</span><span style="font-size: 11px;" data-mce-style="font-size: 11px;"><strong><a href="https://www.youtube.com/channel/UCV1bnw3keR-u71KOZh2ak8Q" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/channel/UCV1bnw3keR-u71KOZh2ak8Q">Youtube</a></strong></span><br></li><li><span style="font-size: 14px;" data-mce-style="font-size: 14px;"><a href="http://alfamafilms.com/" target="_blank" rel="noopener" data-mce-href="http://alfamafilms.com/">Alfama Films</a> :&nbsp;</span><span style="font-size: 11px;" data-mce-style="font-size: 11px;"><a href="https://www.youtube.com/channel/UC_-vZhxBrWS2xFm3Cw0y6Ow" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/channel/UC_-vZhxBrWS2xFm3Cw0y6Ow"><s><strong>Youtube</strong></s></a></span><br></li><li><span style="font-size: 11pt;" data-mce-style="font-size: 11pt;"><a data-mce-href="http://www.alohadistrib.fr/" href="http://www.alohadistrib.fr/">Aloha Distribution</a> : </span><span style="font-size: 11px;" data-mce-style="font-size: 11px;"><strong><a data-mce-href="https://vimeo.com/user68062608" href="https://vimeo.com/user68062608">Vimeo</a><br></strong></span></li><li><span style="font-size: 14px;" data-mce-style="font-size: 14px;"><a href="http://materiel.apollo-films.com/" target="_blank" rel="noopener" data-mce-href="http://materiel.apollo-films.com/">Apollo Films</a> :&nbsp;</span><span style="font-size: 11px;" data-mce-style="font-size: 11px;"><strong><a href="https://www.youtube.com/channel/UCf9ebFD0v4xJNTshVXZOycw" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/channel/UCf9ebFD0v4xJNTshVXZOycw">Youtube</a></strong></span><br></li><li><span style="font-size: 14px;" data-mce-style="font-size: 14px;"><a href="http://www.aramisfilms.fr/" target="_blank" rel="noopener" data-mce-href="http://www.aramisfilms.fr/">Aramis Films</a> :&nbsp;</span><span style="font-size: 11px;" data-mce-style="font-size: 11px;"><strong><a href="https://www.youtube.com/channel/UC9VyjriK7jgB40kLIZgDukQ" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/channel/UC9VyjriK7jgB40kLIZgDukQ">Youtube</a></strong></span><br></li><li><span style="font-size: 14px;" data-mce-style="font-size: 14px;">Arc en Ciel Films :&nbsp;</span><span style="font-size: 11px;" data-mce-style="font-size: 11px;"><strong><a href="https://www.youtube.com/channel/UC2beA2B4FI5EKA-tHQsxY1A" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/channel/UC2beA2B4FI5EKA-tHQsxY1A">Youtube</a></strong></span><br></li><li><span style="font-size: 14px;" data-mce-style="font-size: 14px;"><a href="http://www.arizonafilms.fr/" target="_blank" rel="noopener" data-mce-href="http://www.arizonafilms.fr/">Arizona Films Distribution</a> :&nbsp;</span><span style="font-size: 11px;" data-mce-style="font-size: 11px;"><strong><a href="https://www.youtube.com/channel/UCsMFRI3VNNUqrtF0ezYIMxQ" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/channel/UCsMFRI3VNNUqrtF0ezYIMxQ">Youtube</a></strong></span><br></li><li><span style="font-size: 14px;" data-mce-style="font-size: 14px;"><a href="http://www.arpselection.com/" style="color: #3572b0; text-decoration: none;" target="_blank" rel="noopener" data-mce-href="http://www.arpselection.com/" data-mce-style="color: #3572b0; text-decoration: none;">ARP Selection</a> :&nbsp;</span><span style="font-size: 11px;" data-mce-style="font-size: 11px;"><strong><a href="https://www.youtube.com/channel/UCT4EwnjIB8Iclg0TbsdD53w" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/channel/UCT4EwnjIB8Iclg0TbsdD53w">Youtube</a></strong></span><br></li><li><span style="font-size: 14px;" data-mce-style="font-size: 14px;"><a href="http://www.arsenal-productions.com/" target="_blank" rel="noopener" data-mce-href="http://www.arsenal-productions.com/">Arsenal Productions</a> :&nbsp;</span><span style="font-size: 11px;" data-mce-style="font-size: 11px;"><strong><a href="https://www.youtube.com/channel/UCrmui6HQ4bIoEcLZ7XvTlWw" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/channel/UCrmui6HQ4bIoEcLZ7XvTlWw">Youtube</a></strong></span><br></li><li><span style="font-size: 14px;" data-mce-style="font-size: 14px;"><a data-mce-href="http://www.arthouse-films.fr/" href="http://www.arthouse-films.fr/">Art House</a> : ...<br></span></li><li><span style="font-size: 14px;" data-mce-style="font-size: 14px;"><a href="http://ascdistribution.com/" target="_blank" rel="noopener" data-mce-href="http://ascdistribution.com/">ASC Distribution</a> :&nbsp;</span><span style="font-size: 11px;" data-mce-style="font-size: 11px;"><strong><a href="https://www.youtube.com/channel/UCUOu4Ko3fZA_Mfuv9_Ac44w" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/channel/UCUOu4Ko3fZA_Mfuv9_Ac44w">Youtube</a></strong></span><br></li><li><span style="font-size: 14px;" data-mce-style="font-size: 14px;"><a href="http://www.theasylum.cc/" target="_blank" rel="noopener" data-mce-href="http://www.theasylum.cc/">Asylum International</a> (en) :&nbsp;</span><span style="font-size: 11px;" data-mce-style="font-size: 11px;"><strong><a href="https://www.youtube.com/channel/UCwQJJVNbn_Tqze89xf83nhw" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/channel/UCwQJJVNbn_Tqze89xf83nhw">Youtube</a></strong></span><br></li></ul><span style="font-size: 24px;" data-mce-style="font-size: 24px;">B</span><ul><li><a href="http://www.bacfilms.com/distribution/fr" style="color: #3572b0; text-decoration: none;" target="_blank" rel="noopener" data-mce-href="http://www.bacfilms.com/distribution/fr" data-mce-style="color: #3572b0; text-decoration: none;">BAC Films</a> : <span style="font-size: 11px;" data-mce-style="font-size: 11px;"><a href="https://www.youtube.com/channel/UCZ-TP7kN2zasu9f_ORRXUfw" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/channel/UCZ-TP7kN2zasu9f_ORRXUfw"><strong>Youtube</strong></a></span><br></li><li><a href="https://www.bellissima-films.com/" style="color: #3572b0; text-decoration: none;" target="_blank" rel="noopener" data-mce-href="https://www.bellissima-films.com/" data-mce-style="color: #3572b0; text-decoration: none;">Bellissima Films</a> : <span style="font-size: 11px;" data-mce-style="font-size: 11px;"><strong><a href="https://www.youtube.com/channel/UCeoWiQi_n0-KXEuCtCfX40w" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/channel/UCeoWiQi_n0-KXEuCtCfX40w">Youtube</a></strong></span><br></li><li><a href="http://bluebird-films.com/" target="_blank" rel="noopener" data-mce-href="http://bluebird-films.com/">Blue Bird Distribution</a> : <span style="font-size: 11px;" data-mce-style="font-size: 11px;"><strong><a href="https://vimeo.com/user65308363" target="_blank" rel="noopener" data-mce-href="https://vimeo.com/user65308363">Vimeo</a></strong></span><br></li><li>Blue Moon : <span style="font-size: 11px;" data-mce-style="font-size: 11px;"><strong><a href="https://www.youtube.com/channel/UC754NWR2oM2Xqb06_WIS-sQ" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/channel/UC754NWR2oM2Xqb06_WIS-sQ">Youtube</a></strong></span><br></li><li><a href="http://www.bodegafilms.com/" target="_blank" rel="noopener" data-mce-href="http://www.bodegafilms.com/">Bodega Films</a> : <span style="font-size: 11px;" data-mce-style="font-size: 11px;"><strong><a href="https://www.youtube.com/channel/UCX75gAA-jcCdK3QlEBjmImg" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/channel/UCX75gAA-jcCdK3QlEBjmImg"><s>Youtube</s></a> | <a href="https://vimeo.com/user25404367" target="_blank" rel="noopener" data-mce-href="https://vimeo.com/user25404367">Vimeo</a></strong></span><br></li></ul><span style="font-size: 24px;" data-mce-style="font-size: 24px;">C</span><ul><li><a href="http://carlottavod.com/" style="color: #3572b0; text-decoration: none;" target="_blank" rel="noopener" data-mce-href="http://carlottavod.com/" data-mce-style="color: #3572b0; text-decoration: none;">Carlotta Films</a> : <span style="font-size: 11px;" data-mce-style="font-size: 11px;"><a href="https://www.youtube.com/channel/UCz_B_mtwN-KcbJc8IrRtfqQ" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/channel/UCz_B_mtwN-KcbJc8IrRtfqQ"><strong>Youtube</strong></a></span><br></li><li><a href="http://www.chrysalis-films.com/" style="color: #3572b0; text-decoration: none;" target="_blank" rel="noopener" data-mce-href="http://www.chrysalis-films.com/" data-mce-style="color: #3572b0; text-decoration: none;">Chrysalis Films</a> : <span style="font-size: 11px;" data-mce-style="font-size: 11px;"><a href="https://www.youtube.com/channel/UCyaHtwBD0O0tbO2Pu3PYKQg" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/channel/UCyaHtwBD0O0tbO2Pu3PYKQg"><strong>Youtube</strong></a></span><br></li><li><a href="http://www.cinemapublicfilms.fr/" style="color: #3572b0; text-decoration: none;" target="_blank" rel="noopener" data-mce-href="http://www.cinemapublicfilms.fr/" data-mce-style="color: #3572b0; text-decoration: none;">Cinéma Public Films</a> : <span style="font-size: 11px;" data-mce-style="font-size: 11px;"><a href="https://www.youtube.com/channel/UC9Uk7VIOkngT141UK5mSNsw" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/channel/UC9Uk7VIOkngT141UK5mSNsw"><strong>Youtube</strong></a></span><br></li><li><a href="https://www.condor-films.fr/" target="_blank" rel="noopener" data-mce-href="https://www.condor-films.fr/">Condor Distribution</a> : <span style="font-size: 11px;" data-mce-style="font-size: 11px;"><a href="https://www.youtube.com/channel/UCLuGnNY8cOokcqJgPQPt1dA" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/channel/UCLuGnNY8cOokcqJgPQPt1dA"><strong>Youtube</strong></a><strong>&nbsp;|&nbsp;</strong><a href="https://www.youtube.com/user/CondorOfficial/featured" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/user/CondorOfficial/featured"><strong>Youtube</strong></a></span><br></li></ul><span style="font-size: 24px;" data-mce-style="font-size: 24px;">D</span><ul><li><span style="color: #8a9599;" data-mce-style="color: #8a9599;"><a href="http://www.damneddistribution.com/" style="color: #3572b0; text-decoration: none;" target="_blank" rel="noopener" data-mce-href="http://www.damneddistribution.com/" data-mce-style="color: #3572b0; text-decoration: none;">Damned Distribution</a> : <span style="font-size: 11px;" data-mce-style="font-size: 11px;"><a href="https://vimeo.com/user7999677" target="_blank" rel="noopener" data-mce-href="https://vimeo.com/user7999677"><strong>Vimeo</strong></a></span></span><br></li><li><a href="http://diaphana.fr/" style="color: #3572b0; text-decoration: none;" target="_blank" rel="noopener" data-mce-href="http://diaphana.fr/" data-mce-style="color: #3572b0; text-decoration: none;">Diaphana Distribution</a> : <span style="font-size: 11px;" data-mce-style="font-size: 11px;"><strong><a href="https://www.youtube.com/user/DiaphanaFilms" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/user/DiaphanaFilms">Youtube</a></strong></span><br></li><li><a href="http://www.corporate.disney.fr/" style="color: #3572b0; text-decoration: none;" target="_blank" rel="noopener" data-mce-href="http://www.corporate.disney.fr/" data-mce-style="color: #3572b0; text-decoration: none;">Disney France</a> : <span style="font-size: 11px;" data-mce-style="font-size: 11px;"><strong><a href="https://www.youtube.com/channel/UCakQLdwrxuo0KhJ49Sq2csA" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/channel/UCakQLdwrxuo0KhJ49Sq2csA">Youtube</a></strong></span><br></li><li><a href="http://www.distribfilms.com/fr" style="color: #3572b0; text-decoration: none;" target="_blank" rel="noopener" data-mce-href="http://www.distribfilms.com/fr" data-mce-style="color: #3572b0; text-decoration: none;">Distrib Films</a> : <span style="font-size: 11px;" data-mce-style="font-size: 11px;"><strong><a href="https://www.youtube.com/channel/UCY6hYjl8yCS1vDe930lNHgA" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/channel/UCY6hYjl8yCS1vDe930lNHgA">Youtube</a></strong></span><br></li></ul><span style="font-size: 24px;" data-mce-style="font-size: 24px;">E</span><ul><li><a href="http://www.epicentrefilms.com/" style="color: #3572b0; text-decoration: none;" target="_blank" rel="noopener" data-mce-href="http://www.epicentrefilms.com/" data-mce-style="color: #3572b0; text-decoration: none;">Epicentre Films</a> : <span style="font-size: 11px;" data-mce-style="font-size: 11px;"><a href="https://www.youtube.com/channel/UCrJKRz-IEnKLRAlkIhQtcgg" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/channel/UCrJKRz-IEnKLRAlkIhQtcgg"><strong>Youtube</strong></a></span><br></li><li><a href="https://www.eddistribution.com/" style="color: #3572b0; text-decoration: none;" target="_blank" rel="noopener" data-mce-href="https://www.eddistribution.com/" data-mce-style="color: #3572b0; text-decoration: none;">ED Distribution</a> : <span style="font-size: 11px;" data-mce-style="font-size: 11px;"><strong><a href="https://vimeo.com/eddistribution" target="_blank" rel="noopener" data-mce-href="https://vimeo.com/eddistribution">Vimeo</a>&nbsp;</strong></span></li><li>Elévation-Prod : <span style="font-size: 11px;" data-mce-style="font-size: 11px;"><strong><a href="https://www.youtube.com/channel/UCiRW3WqvYD5UuyJdxWnbH7A" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/channel/UCiRW3WqvYD5UuyJdxWnbH7A">Youtube</a></strong></span><br></li><li><a href="http://www.europacorp.com/" style="color: #3572b0; text-decoration: none;" target="_blank" rel="noopener" data-mce-href="http://www.europacorp.com/" data-mce-style="color: #3572b0; text-decoration: none;">EUROPACORP</a> : <span style="font-size: 11px;" data-mce-style="font-size: 11px;"><strong><a href="https://www.youtube.com/channel/UCVHpE5vFRVjoAiZeJjLh7qQ" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/channel/UCVHpE5vFRVjoAiZeJjLh7qQ">Youtube</a></strong></span><br></li><li><a href="http://www.eurozoomcine.com/" style="background-color: initial; color: #3572b0;" target="_blank" rel="noopener" data-mce-href="http://www.eurozoomcine.com/" data-mce-style="background-color: initial; color: #3572b0;">EUROZOOM</a> : <span style="font-size: 11px;" data-mce-style="font-size: 11px;"><strong><a href="https://www.youtube.com/user/Ezmdist" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/user/Ezmdist">Youtube</a></strong></span><br></li></ul></td><td style="width: 25%; vertical-align: top;" data-mce-style="width: 25%; vertical-align: top;"><span style="font-size: 24px;" data-mce-style="font-size: 24px;">F</span><br><ul><li><a href="http://www.capricci.fr/" style="color: #3572b0; text-decoration: none;" target="_blank" rel="noopener" data-mce-href="http://www.capricci.fr/" data-mce-style="color: #3572b0; text-decoration: none;">Films Capricci</a> : <span style="font-size: 11px;" data-mce-style="font-size: 11px;"><a href="https://www.youtube.com/channel/UC0Ay58ipIN2RqZ_UttLCYTQ" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/channel/UC0Ay58ipIN2RqZ_UttLCYTQ"><strong>Youtube</strong></a></span><br></li><li>Les Films du Cartel : <span style="font-size: 11px;" data-mce-style="font-size: 11px;"><strong><a href="https://www.youtube.com/channel/UChOpz7t1TKl3zHOm30OrdKg" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/channel/UChOpz7t1TKl3zHOm30OrdKg">Youtube</a></strong></span><br></li><li><a href="http://www.filmsdulosange.fr/fr/" style="color: #3572b0; text-decoration: none;" target="_blank" rel="noopener" data-mce-href="http://www.filmsdulosange.fr/fr/" data-mce-style="color: #3572b0; text-decoration: none;">Les Films du Losange</a> : <span style="font-size: 11px;" data-mce-style="font-size: 11px;"><strong><a href="https://www.youtube.com/channel/UCGaAgGHUaGB3A5G2C8bnRcg" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/channel/UCGaAgGHUaGB3A5G2C8bnRcg">Youtube</a></strong></span><span style="font-size: 11px;" data-mce-style="font-size: 11px;"><strong>&nbsp;| <a data-mce-href="https://vimeo.com/filmsdulosange" href="https://vimeo.com/filmsdulosange">Vimeo</a><br></strong></span></li></ul><span style="font-size: 24px;" data-mce-style="font-size: 24px;">G</span><ul><li><span style="font-size: 14px;" data-mce-style="font-size: 14px;"><a href="http://www.gaumont.fr/" style="color: #3572b0; text-decoration: none;" target="_blank" rel="noopener" data-mce-href="http://www.gaumont.fr/" data-mce-style="color: #3572b0; text-decoration: none;">Gaumont</a> : <span style="font-size: 11px;" data-mce-style="font-size: 11px;"><a href="https://www.youtube.com/channel/UCKnyzIyfL5Zj7cHhcC6bTyg" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/channel/UCKnyzIyfL5Zj7cHhcC6bTyg"><strong>Youtube</strong></a></span></span><br></li><li><span style="font-size: 14px;" data-mce-style="font-size: 14px;"><span style="font-size: 14px;" data-mce-style="font-size: 14px;"><a href="https://www.lageode.fr/" target="_blank" rel="noopener" data-mce-href="https://www.lageode.fr/">La Géode Paris</a><span style="font-size: 14px;" data-mce-style="font-size: 14px;">&nbsp;: <span style="font-size: 11px;" data-mce-style="font-size: 11px;"><a href="https://www.youtube.com/channel/UCr6tOCcveYlmq_63eAHcHsw" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/channel/UCr6tOCcveYlmq_63eAHcHsw"><strong>Youtube</strong></a></span></span></span></span><br></li><li><span style="font-size: 14px;" data-mce-style="font-size: 14px;"><span style="font-size: 14px;" data-mce-style="font-size: 14px;"><span style="font-size: 14px;" data-mce-style="font-size: 14px;"><span style="font-size: 14px;" data-mce-style="font-size: 14px;"><span style="font-size: 14px;" data-mce-style="font-size: 14px;"><a href="http://www.grizouille.com/" target="_blank" rel="noopener" data-mce-href="http://www.grizouille.com/">Grizouille Films</a> : <span style="font-size: 11px;" data-mce-style="font-size: 11px;"><strong><a href="https://www.youtube.com/user/grizouillefilms" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/user/grizouillefilms">Youtube</a></strong></span></span></span></span></span></span><br></li></ul><div><span style="font-size: 24px;" data-mce-style="font-size: 24px;">H</span></div><ul><li><span style="font-size: 14px;" data-mce-style="font-size: 14px;"><a href="https://www.happinessdistribution.com/" style="color: #3572b0; text-decoration: none;" target="_blank" rel="noopener" data-mce-href="https://www.happinessdistribution.com/" data-mce-style="color: #3572b0; text-decoration: none;">Happiness Distribution</a> :&nbsp;</span><span style="font-size: 11px;" data-mce-style="font-size: 11px;"><span style="font-size: 11px;" data-mce-style="font-size: 11px;"><strong><a href="https://www.youtube.com/channel/UCvW865JAuNNJEBeiAY7vAXw" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/channel/UCvW865JAuNNJEBeiAY7vAXw">Youtube</a></strong></span></span><br></li><li><span style="font-size: 14px;" data-mce-style="font-size: 14px;"><span style="font-size: 14px;" data-mce-style="font-size: 14px;"><span style="font-size: 14px;" data-mce-style="font-size: 14px;"><a href="http://www.hautetcourt.com/" style="color: #3572b0; text-decoration: none;" target="_blank" rel="noopener" data-mce-href="http://www.hautetcourt.com/" data-mce-style="color: #3572b0; text-decoration: none;">Haut et Court</a> :&nbsp;</span></span><span style="font-size: 11px;" data-mce-style="font-size: 11px;"><strong><a href="https://www.youtube.com/channel/UCWkszbu1NAhON4ngc3pR4UQ" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/channel/UCWkszbu1NAhON4ngc3pR4UQ">Youtube</a></strong></span></span><br></li><li><span style="font-size: 14px;" data-mce-style="font-size: 14px;"><span style="font-size: 14px;" data-mce-style="font-size: 14px;"><span style="font-size: 14px;" data-mce-style="font-size: 14px;"><span style="font-size: 14px;" data-mce-style="font-size: 14px;"><a href="http://www.hevadis.com/" style="color: #3572b0; text-decoration: none;" target="_blank" rel="noopener" data-mce-href="http://www.hevadis.com/" data-mce-style="color: #3572b0; text-decoration: none;">Hévadis Films</a> : <span style="font-size: 11px;" data-mce-style="font-size: 11px;"><strong><a href="https://www.dailymotion.com/Hevadis" target="_blank" rel="noopener" data-mce-href="https://www.dailymotion.com/Hevadis">Dailymotion</a></strong></span></span></span></span></span><br></li></ul><span style="font-size: 24px;" data-mce-style="font-size: 24px;">I</span><ul><li><div><span style="font-size: 14px;" data-mce-style="font-size: 14px;">Iberi Films Distribution :&nbsp;</span><span style="font-size: 11px;" data-mce-style="font-size: 11px;"><strong><a href="https://www.youtube.com/channel/UC5zTzShAxN4iWSWSpSnXz8g" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/channel/UC5zTzShAxN4iWSWSpSnXz8g">Youtube</a></strong></span><br></div></li></ul><div data-empty="true"><span style="font-size: 24px;" data-mce-style="font-size: 24px;">J</span></div><ul><li><a href="http://www.thejokersfilms.com/" style="color: #3572b0; text-decoration: none;" target="_blank" rel="noopener" data-mce-href="http://www.thejokersfilms.com/" data-mce-style="color: #3572b0; text-decoration: none;">The Jokers</a> : <span style="font-size: 11px;" data-mce-style="font-size: 11px;"><a href="https://www.youtube.com/user/thejokersfilms" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/user/thejokersfilms"><strong>Youtube</strong></a></span><br></li><li><a data-mce-href="http://jhrfilms.com/" href="http://jhrfilms.com/">JHR Films</a> : <a data-mce-href="https://vimeo.com/jhrfilms" href="https://vimeo.com/jhrfilms"><span style="font-size: 8pt;" data-mce-style="font-size: 8pt;"><strong>Vimeo</strong></span></a><br></li><li><span style="font-size: 14px;" data-mce-style="font-size: 14px;"><a href="https://www.jour2fete.com/" style="color: #3572b0; text-decoration: none;" target="_blank" rel="noopener" data-mce-href="https://www.jour2fete.com/" data-mce-style="color: #3572b0; text-decoration: none;">Jour2fête</a> :&nbsp;</span><span style="font-size: 11px;" data-mce-style="font-size: 11px;"><span style="font-size: 11px;" data-mce-style="font-size: 11px;"><strong><a href="https://vimeo.com/jour2fete" target="_blank" rel="noopener" data-mce-href="https://vimeo.com/jour2fete">Vimeo</a></strong></span></span><br></li><li><span style="font-size: 14px;" data-mce-style="font-size: 14px;"><a href="http://www.jupiter-films.com/" style="color: #3572b0; text-decoration: none;" target="_blank" rel="noopener" data-mce-href="http://www.jupiter-films.com/" data-mce-style="color: #3572b0; text-decoration: none;">Jupiter Films</a> :&nbsp;</span><span style="font-size: 11px;" data-mce-style="font-size: 11px;"><span style="font-size: 11px;" data-mce-style="font-size: 11px;"><strong><a href="https://vimeo.com/jupiterfilms" target="_blank" rel="noopener" data-mce-href="https://vimeo.com/jupiterfilms">Vimeo</a></strong></span></span><br></li></ul><div class="" data-empty="true"><span style="font-size: 24px;" data-mce-style="font-size: 24px;">K</span></div><ul><li><span style="font-size: 14px;" data-mce-style="font-size: 14px;"><span style="font-size: 14px;" data-mce-style="font-size: 14px;"><a href="http://kanibalfilms.fr/" style="color: #3572b0; text-decoration: none;" target="_blank" rel="noopener" data-mce-href="http://kanibalfilms.fr/" data-mce-style="color: #3572b0; text-decoration: none;">Kanibal Films</a> : <strong><span style="font-size: 8pt;" data-mce-style="font-size: 8pt;"><a data-mce-href="https://www.youtube.com/channel/UCjnn8d7TZxl3cdcaLxYOEEA" href="https://www.youtube.com/channel/UCjnn8d7TZxl3cdcaLxYOEEA">Youtube</a> | </span></strong></span><span style="text-decoration: line-through;" data-mce-style="text-decoration: line-through;"><span style="font-size: 11px;" data-mce-style="font-size: 11px;"><strong><a href="https://www.youtube.com/channel/UCV8vwErqCxTfbxHXJFlRJOA" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/channel/UCV8vwErqCxTfbxHXJFlRJOA">Youtube</a></strong></span></span></span><br></li><li><span style="font-size: 14px;" data-mce-style="font-size: 14px;"><span style="font-size: 14px;" data-mce-style="font-size: 14px;"><a href="http://www.kmbofilms.com/" style="color: #3572b0; text-decoration: none;" target="_blank" rel="noopener" data-mce-href="http://www.kmbofilms.com/" data-mce-style="color: #3572b0; text-decoration: none;">KMBO</a> :&nbsp;</span><span style="font-size: 11px;" data-mce-style="font-size: 11px;"><strong><a href="https://www.youtube.com/channel/UCky3zO3onYSUMZPhC5xwesg" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/channel/UCky3zO3onYSUMZPhC5xwesg">Youtube</a></strong></span></span><br></li></ul><div class="" data-empty="true"><span style="font-size: 24px;" data-mce-style="font-size: 24px;">L</span></div><ul><li><span style="font-size: 14px;" data-mce-style="font-size: 14px;"><span style="font-size: 14px;" data-mce-style="font-size: 14px;"><a href="http://www.lfr-films.com/" target="_blank" rel="noopener" data-mce-href="http://www.lfr-films.com/">LFR Films</a> :&nbsp;</span><span style="font-size: 11px;" data-mce-style="font-size: 11px;"><a href="https://www.youtube.com/channel/UCYQ7r6mQXBbtS2zvZlSYt3Q" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/channel/UCYQ7r6mQXBbtS2zvZlSYt3Q"><strong>Youtube</strong></a></span></span><br></li><li><span style="font-size: 14px;" data-mce-style="font-size: 14px;"><span style="font-size: 14px;" data-mce-style="font-size: 14px;"><span style="font-size: 14px;" data-mce-style="font-size: 14px;"><span style="font-size: 14px;" data-mce-style="font-size: 14px;"><span style="font-size: 14px;" data-mce-style="font-size: 14px;"><a href="http://ligne7.fr/" target="_blank" rel="noopener" data-mce-href="http://ligne7.fr/">LIGNE 7</a> : <span style="font-size: 11px;" data-mce-style="font-size: 11px;"><strong><a href="https://www.youtube.com/channel/UC4pQKxXCwMbt_vHSXCqwQCQ" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/channel/UC4pQKxXCwMbt_vHSXCqwQCQ">Youtube</a></strong></span></span></span></span></span></span><br></li></ul><span style="font-size: 24px;" data-mce-style="font-size: 24px;">M</span><ul><li><a href="http://www.malavidafilms.com/" style="color: #3572b0; text-decoration: none;" target="_blank" rel="noopener" data-mce-href="http://www.malavidafilms.com/" data-mce-style="color: #3572b0; text-decoration: none;">Malavida</a> : <span style="font-size: 11px;" data-mce-style="font-size: 11px;"><span style="font-size: 11px;" data-mce-style="font-size: 11px;"><strong><a href="https://www.dailymotion.com/malavidafilms" target="_blank" rel="noopener" data-mce-href="https://www.dailymotion.com/malavidafilms">Dailymotion</a></strong></span></span><br></li><li><a href="http://www.marcopolosas.com/" style="color: #3572b0; text-decoration: none;" target="_blank" rel="noopener" data-mce-href="http://www.marcopolosas.com/" data-mce-style="color: #3572b0; text-decoration: none;">Marco Polo Production</a> : <span style="font-size: 11px;" data-mce-style="font-size: 11px;"><span style="font-size: 11px;" data-mce-style="font-size: 11px;"><strong><a href="https://www.youtube.com/channel/UCoYO_b98C0EE8jcZ9-Wm-tQ" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/channel/UCoYO_b98C0EE8jcZ9-Wm-tQ">Youtube</a></strong></span></span><br></li><li><a href="http://www.marsfilms.com/" style="color: #3572b0; text-decoration: none;" target="_blank" rel="noopener" data-mce-href="http://www.marsfilms.com/" data-mce-style="color: #3572b0; text-decoration: none;">Mars Disribution</a> : <span style="font-size: 11px;" data-mce-style="font-size: 11px;"><span style="font-size: 11px;" data-mce-style="font-size: 11px;"><strong><a href="https://www.youtube.com/user/MarsDistribution" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/user/MarsDistribution">Youtube</a></strong></span></span><br></li><li><a href="http://distribution.memento-films.com/" style="color: #3572b0; text-decoration: none;" target="_blank" rel="noopener" data-mce-href="http://distribution.memento-films.com/" data-mce-style="color: #3572b0; text-decoration: none;">Memento Films Distribution</a> : <span style="font-size: 11px;" data-mce-style="font-size: 11px;"><span style="font-size: 11px;" data-mce-style="font-size: 11px;"><strong><a href="https://www.youtube.com/channel/UCGcwomqYAC5zGgr3Y76S9sQ" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/channel/UCGcwomqYAC5zGgr3Y76S9sQ">Youtube</a></strong></span></span><br></li><li><a data-mce-href="https://www.meteore-films.fr/" href="https://www.meteore-films.fr/">Météore Films</a> : <a data-mce-href="https://vimeo.com/user48973081" href="https://vimeo.com/user48973081"><span style="font-size: 11px;" data-mce-style="font-size: 11px;"><span style="font-size: 11px;" data-mce-style="font-size: 11px;"><strong>Vimeo</strong></span></span></a><br></li><li><a href="https://www.metrofilms.com/" style="color: #3572b0; text-decoration: none;" target="_blank" rel="noopener" data-mce-href="https://www.metrofilms.com/" data-mce-style="color: #3572b0; text-decoration: none;">Metropolitan Films</a> : <span style="font-size: 11px;" data-mce-style="font-size: 11px;"><span style="font-size: 11px;" data-mce-style="font-size: 11px;"><strong><a href="https://www.youtube.com/channel/UCl01THIfTUqU2lMVgNG7mBQ" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/channel/UCl01THIfTUqU2lMVgNG7mBQ">Youtube</a></strong></span></span><br></li></ul><span style="font-size: 24px;" data-mce-style="font-size: 24px;">N</span><ul><li><span style="font-size: 14px;" data-mce-style="font-size: 14px;"><a href="https://www.nourfilms.com/" style="color: #3572b0; text-decoration: none;" target="_blank" rel="noopener" data-mce-href="https://www.nourfilms.com/" data-mce-style="color: #3572b0; text-decoration: none;">Nour Films</a> :&nbsp;</span><span style="font-size: 11px;" data-mce-style="font-size: 11px;"><span style="font-size: 11px;" data-mce-style="font-size: 11px;"><strong><a href="https://vimeo.com/user19820501" target="_blank" rel="noopener" data-mce-href="https://vimeo.com/user19820501">Vimeo</a></strong></span></span><br></li></ul></td><td style="width: 25.033%; vertical-align: top;" data-mce-style="width: 25.033%; vertical-align: top;"><span style="font-size: 24px;" data-mce-style="font-size: 24px;">O</span><br><ul><li><span style="font-size: 14px;" data-mce-style="font-size: 14px;"><a href="https://www.ocean-films.com/" style="color: #3572b0; text-decoration: none;" target="_blank" rel="noopener" data-mce-href="https://www.ocean-films.com/" data-mce-style="color: #3572b0; text-decoration: none;">Océan Films Distribution</a> : <span style="font-size: 11px;" data-mce-style="font-size: 11px;"><a href="https://www.youtube.com/user/OceanFilms2013" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/user/OceanFilms2013"><strong>Youtube</strong></a></span></span><br></li><li><span style="font-size: 14px;" data-mce-style="font-size: 14px;">Onyx Films :&nbsp;</span><span style="font-size: 11px;" data-mce-style="font-size: 11px;"><span style="font-size: 11px;" data-mce-style="font-size: 11px;"><strong><a href="https://www.youtube.com/channel/UCSmdejBVIjWlFj2k7MJHVPg" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/channel/UCSmdejBVIjWlFj2k7MJHVPg">Youtube</a></strong></span></span><br></li><li><span style="font-size: 14px;" data-mce-style="font-size: 14px;"><a href="https://www.youtube.com/channel/UClt5Bst8Ji05dZvTUdnO85g" rel="nofollow" style="color: #3572b0; text-decoration: none;" data-mce-href="https://www.youtube.com/channel/UClt5Bst8Ji05dZvTUdnO85g" data-mce-style="color: #3572b0; text-decoration: none;">Open Road Films</a> (en) : <span style="font-size: 11px;" data-mce-style="font-size: 11px;"><a href="https://www.youtube.com/channel/UClt5Bst8Ji05dZvTUdnO85g" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/channel/UClt5Bst8Ji05dZvTUdnO85g"><strong>Youtube</strong></a></span></span><br></li><li><a data-mce-href="https://www.optimale-distribution.fr" href="https://www.optimale-distribution.fr">Optimale Distribution</a> : <a data-mce-href="https://www.youtube.com/channel/UCDbxG5QEFJfU0BIRLmHhSnQ/" href="https://www.youtube.com/channel/UCDbxG5QEFJfU0BIRLmHhSnQ/"><span style="font-size: 8pt;" data-mce-style="font-size: 8pt;"><strong>Youtube</strong></span></a><br></li><li><span style="font-size: 14px;" data-mce-style="font-size: 14px;">Ouranos Films :&nbsp;</span><span style="font-size: 11px;" data-mce-style="font-size: 11px;"><span style="font-size: 11px;" data-mce-style="font-size: 11px;"><strong><a href="https://www.youtube.com/channel/UCnows-wCT-USjJ4TVqThZVA" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/channel/UCnows-wCT-USjJ4TVqThZVA">Youtube</a></strong></span></span><br></li><li><span style="font-size: 14px;" data-mce-style="font-size: 14px;"><a href="http://www.outplayfilms.com/" style="color: #3572b0; text-decoration: none;" target="_blank" rel="noopener" data-mce-href="http://www.outplayfilms.com/" data-mce-style="color: #3572b0; text-decoration: none;">Outplay</a> :&nbsp;</span><span style="font-size: 11px;" data-mce-style="font-size: 11px;"><span style="font-size: 11px;" data-mce-style="font-size: 11px;"><strong><a href="https://www.youtube.com/channel/UCvjfTA-fSCmdtrE5Hx2VVAQ" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/channel/UCvjfTA-fSCmdtrE5Hx2VVAQ">Youtube</a></strong></span></span><br></li></ul><span style="font-size: 24px;" data-mce-style="font-size: 24px;">P</span><ul><li><span style="font-size: 14px;" data-mce-style="font-size: 14px;"><a href="http://www.le-pacte.com/france/accueil/" style="color: #3572b0; text-decoration: none;" target="_blank" rel="noopener" data-mce-href="http://www.le-pacte.com/france/accueil/" data-mce-style="color: #3572b0; text-decoration: none;">Le Pacte</a> :&nbsp;</span><span style="font-size: 11px;" data-mce-style="font-size: 11px;"><span style="font-size: 11px;" data-mce-style="font-size: 11px;"><strong><a href="https://www.youtube.com/channel/UCAwwZRQ3NEOMyt8sot2A9Rw" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/channel/UCAwwZRQ3NEOMyt8sot2A9Rw">Youtube</a></strong></span></span><br></li><li><span style="font-size: 14px;" data-mce-style="font-size: 14px;"><a href="http://paradisfilms.com/" style="background-color: initial; color: #3572b0;" target="_blank" rel="noopener" data-mce-href="http://paradisfilms.com/" data-mce-style="background-color: initial; color: #3572b0;">Paradis Films</a> :&nbsp;</span><span style="font-size: 11px;" data-mce-style="font-size: 11px;"><span style="font-size: 11px;" data-mce-style="font-size: 11px;"><strong><a href="https://www.youtube.com/user/paradisfilmsvideos" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/user/paradisfilmsvideos">Youtube</a></strong></span></span><br></li><li><span style="font-size: 14px;" data-mce-style="font-size: 14px;"><a href="https://www.paramount.com/" style="color: #3572b0; text-decoration: none;" target="_blank" rel="noopener" data-mce-href="https://www.paramount.com/" data-mce-style="color: #3572b0; text-decoration: none;">Paramount Pictures</a> (en) :&nbsp;</span><span style="font-size: 11px;" data-mce-style="font-size: 11px;"><span style="font-size: 11px;" data-mce-style="font-size: 11px;"><strong><a href="https://www.youtube.com/channel/UCF9imwPMSGz4Vq1NiTWCC7g" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/channel/UCF9imwPMSGz4Vq1NiTWCC7g">Youtube</a></strong></span></span><br></li><li><span style="font-size: 14px;" data-mce-style="font-size: 14px;"><a href="http://www.paramountpictures.fr/" style="color: #3572b0; text-decoration: none;" target="_blank" rel="noopener" data-mce-href="http://www.paramountpictures.fr/" data-mce-style="color: #3572b0; text-decoration: none;">Paramount Pictures France</a> :&nbsp;</span><span style="font-size: 11px;" data-mce-style="font-size: 11px;"><span style="font-size: 11px;" data-mce-style="font-size: 11px;"><strong><a href="https://www.youtube.com/channel/UCgBl5P2pybImwvroU8fK2Zw" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/channel/UCgBl5P2pybImwvroU8fK2Zw">Youtube</a></strong></span></span><br></li><li><span style="font-size: 14px;" data-mce-style="font-size: 14px;"><a href="http://www.pathefilms.com/" style="color: #3572b0; text-decoration: none;" target="_blank" rel="noopener" data-mce-href="http://www.pathefilms.com/" data-mce-style="color: #3572b0; text-decoration: none;">Pathé</a> :&nbsp;</span><span style="font-size: 11px;" data-mce-style="font-size: 11px;"><span style="font-size: 11px;" data-mce-style="font-size: 11px;"><strong><a href="https://www.youtube.com/channel/UCGVrjz7s7ui-c4BHZ155Ylg" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/channel/UCGVrjz7s7ui-c4BHZ155Ylg">Youtube</a></strong></span></span><br></li><li><span style="font-size: 14px;" data-mce-style="font-size: 14px;"><a href="http://www.potemkine.fr/" style="color: #3572b0; text-decoration: none;" target="_blank" rel="noopener" data-mce-href="http://www.potemkine.fr/" data-mce-style="color: #3572b0; text-decoration: none;">Potemkine Films</a> :&nbsp;</span><span style="font-size: 11px;" data-mce-style="font-size: 11px;"><span style="font-size: 11px;" data-mce-style="font-size: 11px;"><strong><a href="https://www.youtube.com/user/potemkinefilms" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/user/potemkinefilms">Youtube</a></strong></span></span><br></li><li><span style="font-size: 14px;" data-mce-style="font-size: 14px;"><a href="http://prettypictures.fr/" style="color: #3572b0; text-decoration: none;" target="_blank" rel="noopener" data-mce-href="http://prettypictures.fr/" data-mce-style="color: #3572b0; text-decoration: none;">Pretty Pictures</a> :&nbsp;</span><span style="font-size: 11px;" data-mce-style="font-size: 11px;"><span style="font-size: 11px;" data-mce-style="font-size: 11px;"><strong><a href="https://www.youtube.com/user/luc023" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/user/luc023">Youtube</a> |&nbsp;</strong><span style="font-size: 11px;" data-mce-style="font-size: 11px;"><strong><a href="https://vimeo.com/user14154126" target="_blank" rel="noopener" data-mce-href="https://vimeo.com/user14154126">Vimeo</a></strong></span></span></span><br></li><li><span style="font-size: 14px;" data-mce-style="font-size: 14px;"><a href="http://www.pyramidefilms.com/" style="color: #3572b0; text-decoration: none;" target="_blank" rel="noopener" data-mce-href="http://www.pyramidefilms.com/" data-mce-style="color: #3572b0; text-decoration: none;">Pyramide Distribution</a> : <span style="font-size: 11px;" data-mce-style="font-size: 11px;"><a href="https://www.youtube.com/channel/UC3p7rwxz92N9krVmVnGFgBQ" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/channel/UC3p7rwxz92N9krVmVnGFgBQ"><strong>Youtube</strong></a></span></span><br></li></ul><span style="font-size: 24px;" data-mce-style="font-size: 24px;">Q</span><ul><li><span style="font-size: 14px;" data-mce-style="font-size: 14px;">...</span></li></ul><span style="font-size: 24px;" data-mce-style="font-size: 24px;">R</span><ul><li><a href="http://www.larabbia.com/" style="color: #3572b0; text-decoration: none;" target="_blank" rel="noopener" data-mce-href="http://www.larabbia.com/" data-mce-style="color: #3572b0; text-decoration: none;">La Rabbia</a> : <span style="font-size: 11px;" data-mce-style="font-size: 11px;"><a href="https://www.youtube.com/channel/UCj8M0UbijKGem6Q77ppDt9w" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/channel/UCj8M0UbijKGem6Q77ppDt9w"><strong>Youtube</strong></a></span><br></li><li><a href="http://www.rezofilms.com/distribution" style="color: #3572b0; text-decoration: none;" target="_blank" rel="noopener" data-mce-href="http://www.rezofilms.com/distribution" data-mce-style="color: #3572b0; text-decoration: none;">Rezo Films</a> : <span style="font-size: 11px;" data-mce-style="font-size: 11px;"><span style="font-size: 11px;" data-mce-style="font-size: 11px;"><strong><a href="https://www.youtube.com/channel/UCee9bhvVTlRNfRxhdSt01eA" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/channel/UCee9bhvVTlRNfRxhdSt01eA">Youtube</a></strong></span></span><br></li><li><a href="https://www.rouge-distribution.com/" target="_blank" rel="noopener" data-mce-href="https://www.rouge-distribution.com/">Rouge Distribution</a> : <span style="font-size: 11px;" data-mce-style="font-size: 11px;"><span style="font-size: 11px;" data-mce-style="font-size: 11px;"><strong><a href="https://vimeo.com/user69411330" target="_blank" rel="noopener" data-mce-href="https://vimeo.com/user69411330">Vimeo</a></strong></span></span><br></li></ul><span style="font-size: 24px;" data-mce-style="font-size: 24px;">S</span><ul><li><span style="font-size: 14px;" data-mce-style="font-size: 14px;"><a href="https://www.sajedistribution.com/accueil.html" target="_blank" rel="noopener" data-mce-href="https://www.sajedistribution.com/accueil.html">Saje Distribution</a> : <span style="font-size: 11px;" data-mce-style="font-size: 11px;"><a href="https://www.youtube.com/channel/UCih-yIVyHv7JAdYKiOHrlCA" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/channel/UCih-yIVyHv7JAdYKiOHrlCA"><strong>Youtube</strong></a></span></span><br></li><li><span style="font-size: 14px;" data-mce-style="font-size: 14px;"><a href="http://www.septiemefactory.com/" style="color: #3572b0; text-decoration: none;" target="_blank" rel="noopener" data-mce-href="http://www.septiemefactory.com/" data-mce-style="color: #3572b0; text-decoration: none;">Septième Factory</a> : <span style="font-size: 11px;" data-mce-style="font-size: 11px;"><a href="https://www.youtube.com/channel/UCZ3IdxZW_56654TdIe5l3_g" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/channel/UCZ3IdxZW_56654TdIe5l3_g"><strong>Youtube</strong></a></span></span><br></li><li><span style="font-size: 14px;" data-mce-style="font-size: 14px;"><a href="https://www.shellac-altern.org/" style="color: #3572b0; text-decoration: none;" target="_blank" rel="noopener" data-mce-href="https://www.shellac-altern.org/" data-mce-style="color: #3572b0; text-decoration: none;">Shellac</a> : <span style="font-size: 11px;" data-mce-style="font-size: 11px;"><a href="https://vimeo.com/shellacfilms" target="_blank" rel="noopener" data-mce-href="https://vimeo.com/shellacfilms"><strong>Vimeo</strong></a></span></span><br></li><li><span style="font-size: 14px;" data-mce-style="font-size: 14px;"> <a href="http://www.smelly-dog-films.com/" style="color: #3572b0; text-decoration: none;" target="_blank" rel="noopener" data-mce-href="http://www.smelly-dog-films.com/" data-mce-style="color: #3572b0; text-decoration: none;">Smelly Dog Films</a> :&nbsp;</span><span style="font-size: 11px;" data-mce-style="font-size: 11px;"><span style="font-size: 11px;" data-mce-style="font-size: 11px;"><strong><a href="https://vimeo.com/smellydogfilms" target="_blank" rel="noopener" data-mce-href="https://vimeo.com/smellydogfilms">Vimeo</a></strong></span></span><br></li><li><span style="font-size: 14px;" data-mce-style="font-size: 14px;"><a href="http://solaris-distribution.com" style="color: #3572b0; text-decoration: none;" target="_blank" rel="noopener" data-mce-href="http://solaris-distribution.com" data-mce-style="color: #3572b0; text-decoration: none;">Solaris Distribution</a> : <span style="font-size: 11px;" data-mce-style="font-size: 11px;"><strong><a href="https://www.youtube.com/channel/UCU98HtbXBrKeb4gCsx47g_Q" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/channel/UCU98HtbXBrKeb4gCsx47g_Q">Youtube</a></strong></span></span><br></li><li><span style="font-size: 14px;" data-mce-style="font-size: 14px;"><a href="http://www.sonypictures.com/" style="color: #3572b0; text-decoration: none;" target="_blank" rel="noopener" data-mce-href="http://www.sonypictures.com/" data-mce-style="color: #3572b0; text-decoration: none;">Sony Pictures Entertainment</a> (en) :&nbsp;</span><span style="font-size: 11px;" data-mce-style="font-size: 11px;"><span style="font-size: 11px;" data-mce-style="font-size: 11px;"><strong><a href="https://www.youtube.com/channel/UCz97F7dMxBNOfGYu3rx8aCw" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/channel/UCz97F7dMxBNOfGYu3rx8aCw">Youtube</a></strong></span></span><br></li><li><span style="font-size: 14px;" data-mce-style="font-size: 14px;"><a href="http://www.sonypictures.co.uk/" style="color: #3572b0; text-decoration: none;" target="_blank" rel="noopener" data-mce-href="http://www.sonypictures.co.uk/" data-mce-style="color: #3572b0; text-decoration: none;">Sony Pictures Releasing UK</a> (en) :&nbsp;</span><span style="font-size: 11px;" data-mce-style="font-size: 11px;"><span style="font-size: 11px;" data-mce-style="font-size: 11px;"><strong><a href="https://www.youtube.com/channel/UCJJap_3RGZ2UxqLTLz0K39g" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/channel/UCJJap_3RGZ2UxqLTLz0K39g">Youtube</a></strong></span></span><br></li><li><span style="font-size: 14px;" data-mce-style="font-size: 14px;"><a href="http://www.sonypictures.fr/" style="color: #3572b0; text-decoration: none;" target="_blank" rel="noopener" data-mce-href="http://www.sonypictures.fr/" data-mce-style="color: #3572b0; text-decoration: none;">Sony Pictures France</a> :&nbsp;</span><span style="font-size: 11px;" data-mce-style="font-size: 11px;"><span style="font-size: 11px;" data-mce-style="font-size: 11px;"><strong><a href="https://www.youtube.com/channel/UC2I1RkNIDzTCAWB8M7BbAQw" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/channel/UC2I1RkNIDzTCAWB8M7BbAQw">Youtube</a></strong></span></span><br></li><li><span style="font-size: 14px;" data-mce-style="font-size: 14px;"><a href="http://www.sddistribution.fr/" style="color: #3572b0; text-decoration: none;" target="_blank" rel="noopener" data-mce-href="http://www.sddistribution.fr/" data-mce-style="color: #3572b0; text-decoration: none;">Sophie Dulac</a> :&nbsp;</span><span style="font-size: 11px;" data-mce-style="font-size: 11px;"><span style="font-size: 11px;" data-mce-style="font-size: 11px;"><strong><a href="https://www.youtube.com/channel/UC7Gi9iRBplAbLvAHSBB7dQA" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/channel/UC7Gi9iRBplAbLvAHSBB7dQA">Youtube</a></strong></span></span><br></li><li><span style="font-size: 14px;" data-mce-style="font-size: 14px;"><a href="http://www.splendor-films.com/" style="color: #3572b0; text-decoration: none;" target="_blank" rel="noopener" data-mce-href="http://www.splendor-films.com/" data-mce-style="color: #3572b0; text-decoration: none;">Splendor Distribution</a> :&nbsp;</span><span style="font-size: 11px;" data-mce-style="font-size: 11px;"><span style="font-size: 11px;" data-mce-style="font-size: 11px;"><strong><a href="https://www.youtube.com/user/splendorfilmsdistrib" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/user/splendorfilmsdistrib">Youtube</a></strong></span></span><br></li><li><span style="font-size: 14px;" data-mce-style="font-size: 14px;"><a href="https://www.snd-films.com/Connexion.aspx" style="color: #3572b0; text-decoration: none;" target="_blank" rel="noopener" data-mce-href="https://www.snd-films.com/Connexion.aspx" data-mce-style="color: #3572b0; text-decoration: none;">SND</a> :&nbsp;</span><span style="font-size: 11px;" data-mce-style="font-size: 11px;"><span style="font-size: 11px;" data-mce-style="font-size: 11px;"><strong><a href="https://www.youtube.com/user/snd" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/user/snd">Youtube</a></strong></span></span><br></li><li><a href="https://www.stray-dogs.biz/distribution" data-mce-href="https://www.stray-dogs.biz/distribution">Stray Dogs Distribution</a> : ...<br></li><li><span style="font-size: 14px;" data-mce-style="font-size: 14px;"><a href="http://www.studiocanal.com/fr" style="color: #3572b0; text-decoration: none;" target="_blank" rel="noopener" data-mce-href="http://www.studiocanal.com/fr" data-mce-style="color: #3572b0; text-decoration: none;">STUDIOCANAL France</a> : <span style="font-size: 11px;" data-mce-style="font-size: 11px;"><a href="https://www.youtube.com/channel/UCCKPoUe4nvn6H-HaoY2UM0g" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/channel/UCCKPoUe4nvn6H-HaoY2UM0g"><strong>Youtube</strong></a></span></span><br></li><li><span style="font-size: 14px;" data-mce-style="font-size: 14px;"><a href="http://www.studiocanal.co.uk/" style="color: #3572b0; text-decoration: none;" target="_blank" rel="noopener" data-mce-href="http://www.studiocanal.co.uk/" data-mce-style="color: #3572b0; text-decoration: none;">STUDIOCANAL UK</a> (en) : <span style="font-size: 11px;" data-mce-style="font-size: 11px;"><a href="https://www.youtube.com/channel/UCFSILgKCKo35QYGz8Kob51g" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/channel/UCFSILgKCKo35QYGz8Kob51g"><strong>Youtube</strong></a></span></span><br></li><li><span style="font-size: 14px;" data-mce-style="font-size: 14px;"><a href="http://www.summitentertainment.com.pk" style="color: #3572b0; text-decoration: none;" target="_blank" rel="noopener" data-mce-href="http://www.summitentertainment.com.pk" data-mce-style="color: #3572b0; text-decoration: none;">Summit Entertainment</a> (en) :&nbsp;</span><span style="font-size: 11px;" data-mce-style="font-size: 11px;"><span style="font-size: 11px;" data-mce-style="font-size: 11px;"><strong><a href="https://www.youtube.com/channel/UCFR6sruqEq52xEqjE84tq4A" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/channel/UCFR6sruqEq52xEqjE84tq4A">Youtube</a></strong></span></span><br></li></ul></td><td style="width: 24.9009%; vertical-align: top;" data-mce-style="width: 24.9009%; vertical-align: top;"><span style="font-size: 24px;" data-mce-style="font-size: 24px;">T</span><br><ul><li>...</li></ul><span style="font-size: 24px;" data-mce-style="font-size: 24px;">U</span><ul><li><span style="font-size: 14px;" data-mce-style="font-size: 14px;"><a href="https://www.ufo-distribution.com/" style="color: #3572b0; text-decoration: none;" target="_blank" rel="noopener" data-mce-href="https://www.ufo-distribution.com/" data-mce-style="color: #3572b0; text-decoration: none;">UFO Distribution</a> :&nbsp;</span><span style="font-size: 11px;" data-mce-style="font-size: 11px;"><span style="font-size: 11px;" data-mce-style="font-size: 11px;"><strong><a href="https://www.youtube.com/channel/UCwRjM9sGRHrXX7kLOs7g9rA" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/channel/UCwRjM9sGRHrXX7kLOs7g9rA">Youtube</a></strong></span></span><br></li><li><span style="font-size: 14px;" data-mce-style="font-size: 14px;"><a href="http://www.ugcdistribution.fr/" style="color: #3572b0; text-decoration: none;" target="_blank" rel="noopener" data-mce-href="http://www.ugcdistribution.fr/" data-mce-style="color: #3572b0; text-decoration: none;">UGC Distribution</a> : <span style="font-size: 11px;" data-mce-style="font-size: 11px;"><a href="https://www.youtube.com/channel/UCIMVZBs4uegC9eM-CqGSlfA" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/channel/UCIMVZBs4uegC9eM-CqGSlfA"><strong>Youtube</strong></a></span></span><br></li><li><span style="font-size: 14px;" data-mce-style="font-size: 14px;"><a href="https://www.universalpictures.com/" style="color: #3572b0; text-decoration: none;" target="_blank" rel="noopener" data-mce-href="https://www.universalpictures.com/" data-mce-style="color: #3572b0; text-decoration: none;">Universal Pictures</a> (en) :&nbsp;</span><span style="font-size: 11px;" data-mce-style="font-size: 11px;"><span style="font-size: 11px;" data-mce-style="font-size: 11px;"><strong><a href="https://www.youtube.com/user/UniversalPictures" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/user/UniversalPictures">Youtube</a></strong></span></span><br></li><li><span style="font-size: 14px;" data-mce-style="font-size: 14px;"><a href="http://www.universalpictures.fr/" style="color: #3572b0; text-decoration: none;" target="_blank" rel="noopener" data-mce-href="http://www.universalpictures.fr/" data-mce-style="color: #3572b0; text-decoration: none;">Universal Pictures France</a> : <span style="font-size: 11px;" data-mce-style="font-size: 11px;"><a href="https://www.youtube.com/channel/UChbOoefuXz17nioY3sgvZxQ" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/channel/UChbOoefuXz17nioY3sgvZxQ"><strong>Youtube</strong></a></span></span><br></li><li><span style="font-size: 14px;" data-mce-style="font-size: 14px;"><a href="https://www.youtube.com/user/UrbanDistribution" rel="nofollow" style="color: #3572b0; text-decoration: none;" data-mce-href="https://www.youtube.com/user/UrbanDistribution" data-mce-style="color: #3572b0; text-decoration: none;">Urban Distribution</a> : <span style="font-size: 11px;" data-mce-style="font-size: 11px;"><a href="https://www.youtube.com/user/UrbanDistribution" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/user/UrbanDistribution"><strong>Youtube</strong></a></span><span style="font-size: 14px;" data-mce-style="font-size: 14px;"><span style="font-size: 14px;" data-mce-style="font-size: 14px;">&nbsp;| <span style="font-size: 11px;" data-mce-style="font-size: 11px;"><strong><a href="https://vimeo.com/uditv" target="_blank" rel="noopener" data-mce-href="https://vimeo.com/uditv">Vimeo</a></strong></span></span></span></span><br></li></ul><span style="font-size: 24px;" data-mce-style="font-size: 24px;">V</span><ul><li><a data-mce-href="https://senscritique.eu.teamwork.com/lesvalseurs.com" href="https://senscritique.eu.teamwork.com/lesvalseurs.com">Les Valseurs</a> : <a data-mce-href="https://www.youtube.com/channel/UCaj8JP9N3gn207zwkjTyMlw" href="https://www.youtube.com/channel/UCaj8JP9N3gn207zwkjTyMlw"><strong><span style="font-size: 8pt;" data-mce-style="font-size: 8pt;">Youtube</span></strong></a><br></li><li><a data-mce-href="https://vendredivendredi.fr/" href="https://vendredivendredi.fr/">Vendredi Distribution</a> : <a data-mce-href="https://www.youtube.com/channel/UCsaHhY_MBAfzN9IMEznNYVQ" href="https://www.youtube.com/channel/UCsaHhY_MBAfzN9IMEznNYVQ"><span style="font-size: 8pt;" data-mce-style="font-size: 8pt;"><strong>Youtube</strong></span></a><br></li><li><a href="http://www.visiosfeir.fr/" style="color: #3572b0; text-decoration: none;" target="_blank" rel="noopener" data-mce-href="http://www.visiosfeir.fr/" data-mce-style="color: #3572b0; text-decoration: none;">Visiosfeir Distribution</a> : <span style="font-size: 11px;" data-mce-style="font-size: 11px;"><span style="font-size: 11px;" data-mce-style="font-size: 11px;"><strong><a href="https://www.youtube.com/channel/UCjeLXEV6L0_7YXLx8-nVCow" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/channel/UCjeLXEV6L0_7YXLx8-nVCow">Youtube</a></strong></span></span><br></li></ul><span style="font-size: 24px;" data-mce-style="font-size: 24px;">W</span><ul><li>Walt Disney Studios (en) : <span style="font-size: 11px;" data-mce-style="font-size: 11px;"><a href="https://www.youtube.com/channel/UC8huWhDjI8UJK4bqo8BJ9WQ" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/channel/UC8huWhDjI8UJK4bqo8BJ9WQ"><strong>Youtube</strong></a></span><br></li><li><a href="https://www.warnerbros.fr/" style="color: #3572b0; text-decoration: none;" target="_blank" rel="noopener" data-mce-href="https://www.warnerbros.fr/" data-mce-style="color: #3572b0; text-decoration: none;">Warner Bros. France</a> : <span style="font-size: 11px;" data-mce-style="font-size: 11px;"><a href="https://www.youtube.com/channel/UCZ0o1IeuSSceEixZbSATWtw" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/channel/UCZ0o1IeuSSceEixZbSATWtw"><strong>Youtube</strong></a></span><br></li><li><a href="http://weinsteinco.com/" style="color: #3572b0; text-decoration: none;" target="_blank" rel="noopener" data-mce-href="http://weinsteinco.com/" data-mce-style="color: #3572b0; text-decoration: none;">The Weinstein Company</a> (en) : <span style="font-size: 11px;" data-mce-style="font-size: 11px;"><a href="https://www.youtube.com/channel/UCdIRIVIc9JMnWzkKFettP8g" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/channel/UCdIRIVIc9JMnWzkKFettP8g"><strong>Youtube</strong></a></span><br></li><li><a href="https://www.widemanagement.com/distribution-france" style="color: #3572b0; text-decoration: none;" target="_blank" rel="noopener" data-mce-href="https://www.widemanagement.com/distribution-france" data-mce-style="color: #3572b0; text-decoration: none;">Wide</a> : <span style="font-size: 11px;" data-mce-style="font-size: 11px;"><span style="font-size: 11px;" data-mce-style="font-size: 11px;"><strong><a href="https://www.youtube.com/channel/UCuizh1D3UoGKJWIwQN4hL5w" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/channel/UCuizh1D3UoGKJWIwQN4hL5w">Youtube</a></strong></span></span><br></li><li><a href="http://www.wildbunch-distribution.com/" target="_blank" rel="noopener" data-mce-href="http://www.wildbunch-distribution.com/">Wild Bunch Distribution</a> : <span style="font-size: 11px;" data-mce-style="font-size: 11px;"><a href="https://www.youtube.com/channel/UCY6zLKMdauZgU8BvqQipKcg" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/channel/UCY6zLKMdauZgU8BvqQipKcg"><strong>Youtube</strong></a></span><br></li><li><a href="http://www.wildside.fr/" style="color: #3572b0; text-decoration: none;" target="_blank" rel="noopener" data-mce-href="http://www.wildside.fr/" data-mce-style="color: #3572b0; text-decoration: none;">Wild Side Cats</a> : <span style="font-size: 11px;" data-mce-style="font-size: 11px;"><a href="https://www.youtube.com/channel/UCujzqF63Fi0QA5VacHrRvrw" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/channel/UCujzqF63Fi0QA5VacHrRvrw"><strong>Youtube</strong></a></span><br></li></ul><span style="font-size: 24px;" data-mce-style="font-size: 24px;">X<br></span><ul><li><span style="font-size: 14px;" data-mce-style="font-size: 14px;">...</span></li></ul><span style="font-size: 24px;" data-mce-style="font-size: 24px;">Y<br></span><ul><li><span style="font-size: 14px;" data-mce-style="font-size: 14px;">...</span></li></ul><span style="font-size: 24px;" data-mce-style="font-size: 24px;">Z</span><ul><li>Zelig Films Distribution : <span style="font-size: 11px;" data-mce-style="font-size: 11px;"><a href="https://www.youtube.com/channel/UCMv46OoV0Bt5L2XAYR1m0KQ" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/channel/UCMv46OoV0Bt5L2XAYR1m0KQ"><strong>Youtube</strong></a></span><br></li><li><a href="https://vimeo.com/zootropefilms" rel="nofollow" style="color: #3572b0; text-decoration: none;" data-mce-href="https://vimeo.com/zootropefilms" data-mce-style="color: #3572b0; text-decoration: none;">ZOOTROPE FILMS</a> : <span style="font-size: 11px;" data-mce-style="font-size: 11px;"><a href="https://www.youtube.com/channel/UCdMPKN0I33pkwIJUvdQN4Bg" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/channel/UCdMPKN0I33pkwIJUvdQN4Bg"><strong>Youtube</strong></a><strong>&nbsp;|&nbsp;</strong><a href="https://vimeo.com/zootropefilms" target="_blank" rel="noopener" data-mce-href="https://vimeo.com/zootropefilms"><strong>Vimeo</strong></a></span><br></li><li><a style="color: #3572b0; text-decoration: none;" href="http://www.zylo.net/" target="_blank" rel="noopener" data-mce-href="http://www.zylo.net/" data-mce-style="color: #3572b0; text-decoration: none;">Zylo</a> : <span style="font-size: 11px;" data-mce-style="font-size: 11px;"><span style="font-size: 11px;" data-mce-style="font-size: 11px;"><strong><a href="https://www.youtube.com/channel/UC084abGX7TICqjVKYgIRuaQ" target="_blank" rel="noopener" data-mce-href="https://www.youtube.com/channel/UC084abGX7TICqjVKYgIRuaQ">Youtube</a></strong></span></span><br></li></ul></td></tr></tbody></table><br><h3><span style="font-size: 24px;" data-mce-style="font-size: 24px;">Jeux vidéo</span></h3><a href="https://www.youtube.com/channel/UC_ntXHv-XdKCD7CPynVvnQw" rel="nofollow" style="color: #3572b0; text-decoration: none;" data-mce-href="https://www.youtube.com/channel/UC_ntXHv-XdKCD7CPynVvnQw" data-mce-style="color: #3572b0; text-decoration: none;">Bandai Namco Entertainment America</a><a href="https://www.youtube.com/channel/UCEl915e-AtoJ7i1m_SXekTw" rel="nofollow" style="color: #3572b0; text-decoration: none;" data-mce-href="https://www.youtube.com/channel/UCEl915e-AtoJ7i1m_SXekTw" data-mce-style="color: #3572b0; text-decoration: none;">Ubisoft France</a><br><a href="https://www.youtube.com/user/PlayStation" rel="nofollow" style="color: #3572b0; text-decoration: none;" data-mce-href="https://www.youtube.com/user/PlayStation" data-mce-style="color: #3572b0; text-decoration: none;">Playstation</a><br><a href="https://www.youtube.com/user/Nintendo" rel="nofollow" style="color: #3572b0; text-decoration: none;" data-mce-href="https://www.youtube.com/user/Nintendo" data-mce-style="color: #3572b0; text-decoration: none;">Nintendo</a><br><a href="https://www.youtube.com/user/RockstarGames" rel="nofollow" style="color: #3572b0; text-decoration: none;" data-mce-href="https://www.youtube.com/user/RockstarGames" data-mce-style="color: #3572b0; text-decoration: none;">Rockstar Games</a><br><a href="https://www.youtube.com/user/Valve" rel="nofollow" style="color: #3572b0; text-decoration: none;" data-mce-href="https://www.youtube.com/user/Valve" data-mce-style="color: #3572b0; text-decoration: none;">Valve</a><br><a href="https://www.youtube.com/user/konami" rel="nofollow" style="color: #3572b0; text-decoration: none;" data-mce-href="https://www.youtube.com/user/konami" data-mce-style="color: #3572b0; text-decoration: none;">Konami</a><br><a href="https://www.youtube.com/user/NaughtyDog" rel="nofollow" style="color: #3572b0; text-decoration: none;" data-mce-href="https://www.youtube.com/user/NaughtyDog" data-mce-style="color: #3572b0; text-decoration: none;">NaughtyDog</a><br><a href="https://www.youtube.com/user/EA" rel="nofollow" style="color: #3572b0; text-decoration: none;" data-mce-href="https://www.youtube.com/user/EA" data-mce-style="color: #3572b0; text-decoration: none;">EA</a><br><a href="https://www.youtube.com/user/CapcomUnityVideos" rel="nofollow" style="color: #3572b0; text-decoration: none;" data-mce-href="https://www.youtube.com/user/CapcomUnityVideos" data-mce-style="color: #3572b0; text-decoration: none;">Capcom</a><br><a href="https://www.youtube.com/user/SquareEnixFrance" rel="nofollow" style="color: #3572b0; text-decoration: none;" data-mce-href="https://www.youtube.com/user/SquareEnixFrance" data-mce-style="color: #3572b0; text-decoration: none;">Square Enix</a><br><a href="https://www.youtube.com/user/xbox" rel="nofollow" style="color: #3572b0; text-decoration: none;" data-mce-href="https://www.youtube.com/user/xbox" data-mce-style="color: #3572b0; text-decoration: none;">Xbox</a><br><a href="https://www.youtube.com/user/TelltaleGames" rel="nofollow" style="color: #3572b0; text-decoration: none;" data-mce-href="https://www.youtube.com/user/TelltaleGames" data-mce-style="color: #3572b0; text-decoration: none;">Telltale Games</a><br><a href="https://www.youtube.com/user/thatgamecompany" rel="nofollow" style="color: #3572b0; text-decoration: none;" data-mce-href="https://www.youtube.com/user/thatgamecompany" data-mce-style="color: #3572b0; text-decoration: none;">Thatgamecompany</a><br><a href="https://www.youtube.com/user/2kgamesinternational" rel="nofollow" style="color: #3572b0; text-decoration: none;" data-mce-href="https://www.youtube.com/user/2kgamesinternational" data-mce-style="color: #3572b0; text-decoration: none;">2K</a><br><a href="https://www.youtube.com/user/WBGAMES" rel="nofollow" style="color: #3572b0; text-decoration: none;" data-mce-href="https://www.youtube.com/user/WBGAMES" data-mce-style="color: #3572b0; text-decoration: none;">Warner Bros. Game</a><br><a href="https://www.youtube.com/user/ActivisionGames" rel="nofollow" style="color: #3572b0; text-decoration: none;" data-mce-href="https://www.youtube.com/user/ActivisionGames" data-mce-style="color: #3572b0; text-decoration: none;">Activision</a><br><a href="https://www.youtube.com/user/blizzard" rel="nofollow" style="color: #3572b0; text-decoration: none;" data-mce-href="https://www.youtube.com/user/blizzard" data-mce-style="color: #3572b0; text-decoration: none;">Blizzard Entertainement</a><br><a href="https://www.youtube.com/user/BethesdaSoftworks" rel="nofollow" style="color: #3572b0; text-decoration: none;" data-mce-href="https://www.youtube.com/user/BethesdaSoftworks" data-mce-style="color: #3572b0; text-decoration: none;">Bethesda Softworks</a><br><a href="https://www.youtube.com/user/SegaAmerica" rel="nofollow" style="color: #3572b0; text-decoration: none;" data-mce-href="https://www.youtube.com/user/SegaAmerica" data-mce-style="color: #3572b0; text-decoration: none;">SEGA</a><br></div> 
-							</div>
-						</div>
-
-						
-					</body>
-				</html>
-			
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="icon" type="image/ico" href="favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="code.js"></script>
+    <title>Liste des distributeurs cinématographiques français</title>
+  </head>
+  <body>
+    <header>
+      <div class="title">Liste des distributeurs cinématographiques français</div>
+    </header>
+    <div class="sorter">
+      <span name="#">#</span>
+      <span name="A">A</span>
+      <span name="B">B</span>
+      <span name="C">C</span>
+      <span name="D">D</span>
+      <span name="E">E</span>
+      <span name="F">F</span>
+      <span name="G">G</span>
+      <span name="H">H</span>
+      <span name="I">I</span>
+      <span name="J">J</span>
+      <span name="K">K</span>
+      <span name="L">L</span>
+      <span name="M">M</span>
+      <span name="N">N</span>
+      <span name="O">O</span>
+      <span name="P">P</span>
+      <span name="Q">Q</span>
+      <span name="R">R</span>
+      <span name="S">S</span>
+      <span name="T">T</span>
+      <span name="U">U</span>
+      <span name="V">V</span>
+      <span name="W">W</span>
+      <span name="X">X</span>
+      <span name="Y">Y</span>
+      <span name="Z">Z</span>
+    </div>
+
+    <main>
+
+      <h1>Chargement de la liste...</h1>
+
+      <section>
+        <h2>#</h2>
+        <ul name="#">
+          <li class="empty-section">Aucune donnée</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>A</h2>
+        <ul name="A">
+          <li class="empty-section">Aucune donnée</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>B</h2>
+        <ul name="B">
+          <li class="empty-section">Aucune donnée</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>C</h2>
+        <ul name="C">
+          <li class="empty-section">Aucune donnée</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>D</h2>
+        <ul name="D">
+          <li class="empty-section">Aucune donnée</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>E</h2>
+        <ul name="E">
+          <li class="empty-section">Aucune donnée</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>F</h2>
+        <ul name="F">
+          <li class="empty-section">Aucune donnée</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>G</h2>
+        <ul name="G">
+          <li class="empty-section">Aucune donnée</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>H</h2>
+        <ul name="H">
+          <li class="empty-section">Aucune donnée</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>I</h2>
+        <ul name="I">
+          <li class="empty-section">Aucune donnée</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>J</h2>
+        <ul name="J">
+          <li class="empty-section">Aucune donnée</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>K</h2>
+        <ul name="K">
+          <li class="empty-section">Aucune donnée</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>L</h2>
+        <ul name="L">
+          <li class="empty-section">Aucune donnée</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>M</h2>
+        <ul name="M">
+          <li class="empty-section">Aucune donnée</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>N</h2>
+        <ul name="N">
+          <li class="empty-section">Aucune donnée</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>O</h2>
+        <ul name="O">
+          <li class="empty-section">Aucune donnée</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>P</h2>
+        <ul name="P">
+          <li class="empty-section">Aucune donnée</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Q</h2>
+        <ul name="Q">
+          <li class="empty-section">Aucune donnée</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>R</h2>
+        <ul name="R">
+          <li class="empty-section">Aucune donnée</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>S</h2>
+        <ul name="S">
+          <li class="empty-section">Aucune donnée</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>T</h2>
+        <ul name="T">
+          <li class="empty-section">Aucune donnée</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>U</h2>
+        <ul name="U">
+          <li class="empty-section">Aucune donnée</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>V</h2>
+        <ul name="V">
+          <li class="empty-section">Aucune donnée</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>X</h2>
+        <ul name="X">
+          <li class="empty-section">Aucune donnée</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Y</h2>
+        <ul name="Y">
+          <li class="empty-section">Aucune donnée</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Z</h2>
+        <ul name="Z">
+          <li class="empty-section">Aucune donnée</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      2018 - Par <a href="https://github.com/ewauq">ewauq</a>. Servez-vous, c'est moi qui régale.
+    </footer>>
+
+  </body>
+  </html>

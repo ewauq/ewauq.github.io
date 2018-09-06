@@ -32,14 +32,6 @@
     ]
   },
   {
-    "name": "Océan Films Distribution",
-    "sorting_name": "ocean films distribution",
-    "website": "https://www.ocean-films.com/",
-    "channels": [
-        "https://www.youtube.com/channel/UClo8rFoAJscq11MjoM3CbUQ"
-    ]
-  },
-  {
     "name": "Damned Distribution",
     "sorting_name": "damned distribution",
     "website": "http://www.damneddistribution.com/",
@@ -197,14 +189,6 @@
     "website": "http://www.cinemapublicfilms.fr/",
     "channels": [
         "https://www.youtube.com/channel/UC9Uk7VIOkngT141UK5mSNsw"
-    ]
-  },
-  {
-    "name": "Damned Distribution",
-    "sorting_name": "damned distribution",
-    "website": "http://www.damneddistribution.com/",
-    "channels": [
-        "https://vimeo.com/user7999677"
     ]
   },
   {
