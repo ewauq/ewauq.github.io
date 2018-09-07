@@ -835,5 +835,13 @@
     "channels": [
       "https://vimeo.com/user5147576"
     ]
+  },
+  {
+    "name": "Fratel Films",
+    "sorting_name": "fratel films",
+    "website": "http://fratelfilms.com/",
+    "channels": [
+      "https://vimeo.com/fratelfilms"
+    ]
   }
 ]
