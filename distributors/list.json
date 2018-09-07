@@ -787,5 +787,61 @@
     "channels": [
         "https://www.youtube.com/user/DestinyDistrib/"
     ]
+  },
+  {
+    "name": "MC4 Distribution",
+    "sorting_name": "mc4 distribution",
+    "website": "http://www.mc4-distribution.fr",
+    "channels": [
+      "https://www.youtube.com/channel/UCgdsAuAYKT728UBd-uP6gjg"
+    ]
+  },
+  {
+    "name": "Tamasa Diffusion",
+    "sorting_name": "tamasa diffusion",
+    "website": "http://www.tamasa-cinema.com/",
+    "channels": [
+      "https://vimeo.com/user33810302"
+    ]
+  },
+  {
+    "name": "Tamasa Diffusion",
+    "sorting_name": "tamasa diffusion",
+    "website": "http://www.tamasa-cinema.com/",
+    "channels": [
+      "https://vimeo.com/user33810302"
+    ]
+  },
+  {
+    "name": "Apollo Films",
+    "sorting_name": "apollo films",
+    "website": "http://materiel.apollo-films.com/",
+    "channels": [
+      "https://www.youtube.com/channel/UCf9ebFD0v4xJNTshVXZOycw"
+    ]
+  },
+  {
+    "name": "La Belle Company",
+    "sorting_name": "la belle company",
+    "website": "https://www.la-belle-company.com/",
+    "channels": [
+      "https://www.youtube.com/channel/UCXe70iTl9iS5DpwTAAgxoyg"
+    ]
+  },
+  {
+    "name": "Survivance",
+    "sorting_name": "survivance",
+    "website": "http://www.survivance.net",
+    "channels": [
+      "https://vimeo.com/user5147576"
+    ]
+  },
+  {
+    "name": "Survivance",
+    "sorting_name": "survivance",
+    "website": "http://www.survivance.net",
+    "channels": [
+      "https://vimeo.com/user5147576"
+    ]
   }
 ]
