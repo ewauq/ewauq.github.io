@@ -779,5 +779,13 @@
     "channels": [
         "https://vimeo.com/nextfilmdistribution"
     ]
+  },
+  {
+    "name": "Destiny Films",
+    "sorting_name": "destiny films",
+    "website": "https://www.destinydistribution.com/",
+    "channels": [
+        "https://www.youtube.com/user/DestinyDistrib/"
+    ]
   }
 ]
