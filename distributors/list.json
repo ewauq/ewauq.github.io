@@ -843,5 +843,13 @@
     "channels": [
       "https://vimeo.com/fratelfilms"
     ]
+  },
+  {
+    "name": "La Vingt-Cinquième Heure",
+    "sorting_name": "vingt cinquieme heure",
+    "website": "https://www.25hprod.com/",
+    "channels": [
+      "https://www.youtube.com/channel/UCJCmlsP4oqH3Ub7FmMsOnYw"
+    ]
   }
 ]
