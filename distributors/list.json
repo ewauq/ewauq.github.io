@@ -851,5 +851,13 @@
     "channels": [
       "https://www.youtube.com/channel/UCJCmlsP4oqH3Ub7FmMsOnYw"
     ]
+  },
+  {
+    "name": "Wayna Pitch",
+    "sorting_name": "wayna pitch",
+    "website": "https://www.waynapitch.com/",
+    "channels": [
+      "https://vimeo.com/waynapitch"
+    ]
   }
 ]
