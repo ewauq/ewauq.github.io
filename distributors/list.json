@@ -858,5 +858,13 @@
     "channels": [
       "https://vimeo.com/user11541555"
     ]
+  },
+  {
+    "name": "Paname Distribution",
+    "sorting_name": "paname",
+    "website": "http://www.paname-distribution.com/",
+    "channels": [
+      "https://www.youtube.com/channel/UCG7X6NWCflzaZ_P_RiSAkiA"
+    ]
   }
 ]
