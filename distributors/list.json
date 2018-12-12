@@ -874,5 +874,13 @@
     "channels": [
       "https://www.youtube.com/channel/UCjFGeu2ScHVtpdPGi0yZAZg"
     ]
+  },
+  {
+    "name": "Origine Films",
+    "sorting_name": "origine",
+    "website": "http://originefilms.fr/",
+    "channels": [
+      "https://vimeo.com/originefilms"
+    ]
   }
 ]
