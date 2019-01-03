@@ -578,7 +578,8 @@
     "sorting_name": "septieme factory",
     "website": "http://www.septiemefactory.com/",
     "channels": [
-        "https://www.youtube.com/channel/UCZ3IdxZW_56654TdIe5l3_g"
+        "https://www.youtube.com/channel/UCZ3IdxZW_56654TdIe5l3_g",
+        "https://vimeo.com/septiemefactory"
     ]
   },
   {
@@ -881,6 +882,14 @@
     "website": "http://originefilms.fr/",
     "channels": [
       "https://vimeo.com/originefilms"
+    ]
+  },
+  {
+    "name": "Gebeka Films",
+    "sorting_name": "gebeka",
+    "website": "http://www.gebekafilms.com/",
+    "channels": [
+      "https://www.youtube.com/user/GEBEKAFILMS/"
     ]
   }
 ]
