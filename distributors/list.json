@@ -893,11 +893,19 @@
     ]
   },
   {
-    "name": "Orsans Distribution ",
+    "name": "Orsans Distribution",
     "sorting_name": "orsans",
     "website": "https://twitter.com/Orsans_distrib",
     "channels": [
       "https://www.youtube.com/channel/UCeRuGoV5Cdxbkc3kfScuqcg/"
+    ]
+  },
+  {
+    "name": "Bobine Films",
+    "sorting_name": "bobine",
+    "website": "https://www.bobine-films.fr/",
+    "channels": [
+      "https://www.youtube.com/channel/UCrJKkut-dGj2wJR1_mG8MKg"
     ]
   }
 ]
