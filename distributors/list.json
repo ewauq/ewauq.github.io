@@ -915,6 +915,14 @@
     "channels": [
       "https://vimeo.com/lesfilmsdelabutte"
     ]
+  },
+  {
+    "name": "Norte Distribution",
+    "sorting_name": "notre distribution",
+    "website": "http://www.norte.fr/",
+    "channels": [
+      "https://vimeo.com/norteproductions"
+    ]
   }
 ]
 
