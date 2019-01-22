@@ -907,6 +907,14 @@
     "channels": [
       "https://www.youtube.com/channel/UCrJKkut-dGj2wJR1_mG8MKg"
     ]
+  },
+  {
+    "name": "Les Films des deux rives",
+    "sorting_name": "films des deux rives",
+    "website": "http://www.filmsdesdeuxrives.com/",
+    "channels": [
+      "https://vimeo.com/lesfilmsdelabutte"
+    ]
   }
 ]
 
