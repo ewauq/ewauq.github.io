@@ -923,6 +923,14 @@
     "channels": [
       "https://vimeo.com/norteproductions"
     ]
+  },
+  {
+    "name": "Les Films du Whippet",
+    "sorting_name": "films du whippet",
+    "website": "http://www.lesfilmsduwhippet.com/",
+    "channels": [
+      "https://www.youtube.com/channel/UCOloTxVGhhLeGzc1u7rk5xQ"
+    ]
   }
 ]
 
