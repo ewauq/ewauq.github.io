@@ -933,7 +933,7 @@
     ]
   },
   {
-    "name": "Juste Distribution",
+    "name": "Juste Doc",
     "sorting_name": "juste distribution",
     "website": "https://justedoc.com/",
     "channels": [
@@ -946,6 +946,22 @@
     "website": "https://www.docks66.com/",
     "channels": [
       "https://www.youtube.com/channel/UCBEf4W-hQMKaTUG1D2pFtZw"
+    ]
+  },
+  {
+    "name": "Folimage",
+    "sorting_name": "folimage",
+    "website": "https://www.folimage.fr/fr/",
+    "channels": [
+      "https://www.youtube.com/channel/UCxEWAwSWGR6hIRL61pRtiUg"
+    ]
+  },
+  {
+    "name": "Contre-Courants",
+    "sorting_name": "contre courants",
+    "website": "http://www.contre-courants.com/",
+    "channels": [
+      "https://vimeo.com/contrecourants/"
     ]
   }
 ]
