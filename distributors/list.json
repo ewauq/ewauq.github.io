@@ -643,7 +643,10 @@
   {
     "name": "Stray Dogs Distribution",
     "sorting_name": "stray dogs distribution",
-    "website": "https://www.stray-dogs.biz/distribution"
+    "website": "https://www.stray-dogs.biz/distribution",
+    "channels": [
+        "https://vimeo.com/user83346642"
+    ]
   },
   {
     "name": "STUDIOCANAL France",
