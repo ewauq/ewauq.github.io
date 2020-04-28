@@ -11,13 +11,13 @@ for (const checkboxButton of checkboxButtons) {
     const name = target.attributes.name.nodeValue;
 
     if (target.classList.contains('checked')) {
-      target.classList.remove('checked')
-      parent.classList.remove('completed')
+      target.classList.remove('checked');
+      parent.classList.remove('completed');
       localStorage.setItem(name, false);
     }
     else {
-      target.classList.add('checked')
-      parent.classList.add('completed')
+      target.classList.add('checked');
+      parent.classList.add('completed');
       localStorage.setItem(name, true);
     }
   });
@@ -26,9 +26,9 @@ for (const checkboxButton of checkboxButtons) {
 window.addEventListener("DOMContentLoaded", () => {
   if (localStorage.length > 0) {
 
-    const keys = { ...localStorage }
+    const keys = Object.keys(localStorage);
 
-    for (const name in keys) {
+    for (const name of keys) {
       const value = localStorage.getItem(name) == 'true'; // conversion to bool
 
       if (document.getElementsByName(name).length) {
@@ -37,8 +37,8 @@ window.addEventListener("DOMContentLoaded", () => {
         const parent = target.parentElement.parentNode;
 
         if (value) {
-          target.classList.add('checked')
-          parent.classList.add('completed')
+          target.classList.add('checked');
+          parent.classList.add('completed');
         }
 
       }
