@@ -177,13 +177,14 @@ picture {
 
     font-weight: 700;
     text-transform: uppercase;
-    width: max-content;
+    white-space: nowrap;
 
     box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.4);
 
     @media (max-width:600px) {
       font-size: 1.3rem;
       padding: 8px;
+      box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.4);
     }
   }
 }
