@@ -1,5 +1,7 @@
 const checkboxButtons = document.querySelectorAll('input[type=checkbox]');
 const resetButton = document.getElementsByName('reset')[0];
+const progressCompleted = document.querySelector('.progress-completed');
+const progressUncompleted = document.querySelector('.progress-uncompleted');
 
 // Checkbox click handler
 for (const checkboxButton of checkboxButtons) {
@@ -17,11 +19,15 @@ for (const checkboxButton of checkboxButtons) {
       parent.classList.remove('completed');
       localStorage.setItem(name, false);
     }
+
+    refreshProgessbar();
   });
 }
 
-// Loading the progress
+
 window.addEventListener("DOMContentLoaded", () => {
+
+  // Loading the progress
   if (localStorage.length > 0) {
 
     const keys = Object.keys(localStorage);
@@ -44,6 +50,11 @@ window.addEventListener("DOMContentLoaded", () => {
     }
 
   }
+
+  // Progress bar stuff
+  refreshProgessbar();
+  progressCompleted.classList.add('animated');
+
 });
 
 // Reset button handling
@@ -54,5 +65,25 @@ resetButton.addEventListener('click', () => {
   }
 })
 
+// On window resizing
+window.addEventListener("resize", refreshProgessbar);
+
+// Refreshes the progress bar at the bottom of the window
+function refreshProgessbar() {
+  const checkboxesTotal = checkboxButtons.length;
+  const checkedCheckboxes = document.querySelectorAll('input[type=checkbox]:checked').length;
+  const percent = Math.round(checkedCheckboxes * 100 / checkboxesTotal);
+  const progessLabel = `${checkedCheckboxes}/${checkboxesTotal} (${percent}%)`;
+
+  progressCompleted.style.width = `${percent}%`;
+
+  if (progressCompleted.offsetWidth < 90) {
+    progressUncompleted.innerHTML = progessLabel;
+    progressCompleted.innerHTML = '';
+  } else {
+    progressUncompleted.innerHTML = '';
+    progressCompleted.innerHTML = progessLabel;
+  }
+}
 
 console.debug("main.js loaded.");
