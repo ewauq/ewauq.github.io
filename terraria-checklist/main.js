@@ -84,6 +84,14 @@ function refreshProgessbar() {
     progressUncompleted.innerHTML = '';
     progressCompleted.innerHTML = progessLabel;
   }
+
+  if (percent == 100) {
+    progressUncompleted.style.display = "none";
+    progressCompleted.classList.add('completed');
+  } else {
+    progressUncompleted.style.display = "inline-block";
+    progressCompleted.classList.remove('completed');
+  }
 }
 
 console.debug("main.js loaded.");
