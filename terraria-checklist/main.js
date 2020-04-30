@@ -77,7 +77,7 @@ function refreshProgessbar() {
 
   progressCompleted.style.width = `${percent}%`;
 
-  if (progressCompleted.offsetWidth < 90) {
+  if (progressCompleted.offsetWidth < 110) {
     progressUncompleted.innerHTML = progessLabel;
     progressCompleted.innerHTML = '';
   } else {
