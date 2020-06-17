@@ -693,7 +693,7 @@
     "sorting_name": "valseurs",
     "website": "http://lesvalseurs.com/",
     "channels": [
-      "https://www.youtube.com/channel/UCaj8JP9N3gn207zwkjTyMlw"
+      "https://vimeo.com/lesvalseurs"
     ]
   },
   {
@@ -975,14 +975,6 @@
     "website": "http://www.lesfilmssalamandre.fr/",
     "channels": [
       "https://www.youtube.com/channel/UC1NmE_A4LPmo-gtmHzuordQ"
-    ]
-  },
-  {
-    "name": "Les Valseurs",
-    "sorting_name": "valseurs",
-    "website": "http://lesvalseurs.com/distrib",
-    "channels": [
-      "https://vimeo.com/lesvalseurs"
     ]
   }
 ]
