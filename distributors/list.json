@@ -976,5 +976,13 @@
     "channels": [
       "https://www.youtube.com/channel/UC1NmE_A4LPmo-gtmHzuordQ"
     ]
+  },
+  {
+    "name": "Films sans frontières",
+    "sorting_name": "films sans frontières",
+    "website": "https://www.films-sans-frontieres.com/",
+    "channels": [
+      "https://www.youtube.com/channel/UCtd2sYNhaFRe3I8Wt46p52g"
+    ]
   }
 ]
