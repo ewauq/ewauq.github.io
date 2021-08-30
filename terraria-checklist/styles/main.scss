@@ -4,6 +4,15 @@ $page-width: 820px;
 $min-width: 340px;
 $checkbox-size: 20px;
 
+@font-face {font-family: "Andy Bold V2";
+  src: url("fonts/andy-bold-v2.eot"); /* IE9*/
+  src: url("fonts/andy-bold-v2.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+  url("fonts/andy-bold-v2.woff2") format("woff2"), /* chrome、firefox */
+  url("fonts/andy-bold-v2.woff") format("woff"), /* chrome、firefox */
+  url("fonts/andy-bold-v2.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url("fonts/andy-bold-v2.svg#Andy Bold V2") format("svg"); /* iOS 4.1- */
+}
+
 // GLOBAL
 * {
   box-sizing: border-box;
@@ -133,6 +142,8 @@ ul.legend {
 .event,
 .boss {
   padding: 0 4px 0 2px;
+  margin-right: 2px;
+  text-transform: uppercase;
 
   a {
     color: $text-color;
@@ -167,7 +178,7 @@ picture {
   .title {
     padding: 16px;
     font-size: 2.2rem;
-    font-family: "Open Sans Condensed", sans-serif;
+    font-family: "Andy Bold V2", sans-serif;
     background-color: rgba(255, 255, 255, 0.7);
 
     margin: 0;
