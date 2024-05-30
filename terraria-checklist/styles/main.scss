@@ -4,13 +4,15 @@ $page-width: 820px;
 $min-width: 340px;
 $checkbox-size: 20px;
 
-@font-face {font-family: "Andy Bold V2";
+@font-face {
+  font-family: "Andy Bold V2";
   src: url("fonts/andy-bold-v2.eot"); /* IE9*/
-  src: url("fonts/andy-bold-v2.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
-  url("fonts/andy-bold-v2.woff2") format("woff2"), /* chrome、firefox */
-  url("fonts/andy-bold-v2.woff") format("woff"), /* chrome、firefox */
-  url("fonts/andy-bold-v2.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
-  url("fonts/andy-bold-v2.svg#Andy Bold V2") format("svg"); /* iOS 4.1- */
+  src: url("fonts/andy-bold-v2.eot?#iefix") format("embedded-opentype"),
+    /* IE6-IE8 */ url("fonts/andy-bold-v2.woff2") format("woff2"),
+    /* chrome、firefox */ url("fonts/andy-bold-v2.woff") format("woff"),
+    /* chrome、firefox */ url("fonts/andy-bold-v2.ttf") format("truetype"),
+    /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+      url("fonts/andy-bold-v2.svg#Andy Bold V2") format("svg"); /* iOS 4.1- */
 }
 
 // GLOBAL
@@ -19,7 +21,8 @@ $checkbox-size: 20px;
 }
 
 body {
-  font-family: "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif,
+    "Segoe UI Emoji", "Segoe UI Symbol";
   color: $text-color;
 }
 
