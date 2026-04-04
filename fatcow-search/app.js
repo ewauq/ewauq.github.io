@@ -5,7 +5,7 @@
         allIcons: typeof ICONS_DATA !== 'undefined' ? ICONS_DATA : [],
         filtered: [],
         currentPage: 1,
-        perPage: 180,
+        perPage: 196,
         modalIndex: -1
     };
 
@@ -33,7 +33,7 @@
             : state.allIcons.slice();
 
         var url = q ? '?q=' + encodeURIComponent(q) : location.pathname;
-        history.replaceState(null, '', url);
+        history.pushState({ q: q }, '', url);
 
         render();
     }
@@ -170,6 +170,8 @@
             return '<button class="keyword-tag" data-keyword="' + kw + '">' + kw + '</button>';
         }).join('') + '</div>';
 
+        html += '<p class="modal-hint">Use &larr; &rarr; arrow keys to navigate</p>';
+
         modalVariants.innerHTML = html;
         modal.hidden = false;
         document.body.style.overflow = 'hidden';
@@ -302,6 +304,53 @@
         var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
         root.setAttribute('data-theme', next);
         localStorage.setItem('fatcow-theme', next);
+
+        // Explosion effect: radial delay from grid center
+        var cards = grid.querySelectorAll('.icon-card');
+        if (cards.length) {
+            var isDark = next === 'dark';
+            var newBg = isDark ? '#1f2937' : '#ffffff';
+            var newBorder = isDark ? '#374151' : '#e5e7eb';
+            var rect = grid.getBoundingClientRect();
+            var cx = rect.left + rect.width / 2;
+            var cy = rect.top + rect.height / 2;
+            var maxDist = 0;
+            var dists = [];
+            cards.forEach(function (card) {
+                var r = card.getBoundingClientRect();
+                var dx = r.left + r.width / 2 - cx;
+                var dy = r.top + r.height / 2 - cy;
+                var d = Math.sqrt(dx * dx + dy * dy);
+                dists.push(d);
+                if (d > maxDist) maxDist = d;
+            });
+            // Freeze current colors before theme switch applies
+            var oldBg = getComputedStyle(cards[0]).backgroundColor;
+            var oldBorder = getComputedStyle(cards[0]).borderColor;
+            cards.forEach(function (card) {
+                card.style.backgroundColor = oldBg;
+                card.style.borderColor = oldBorder;
+                card.style.transition = 'none';
+            });
+            // After a frame, animate each card to new color with radial delay
+            requestAnimationFrame(function () {
+                requestAnimationFrame(function () {
+                    cards.forEach(function (card, i) {
+                        var delay = maxDist ? (dists[i] / maxDist) * 500 : 0;
+                        card.style.transition = 'background-color 0.3s ' + delay + 'ms, border-color 0.3s ' + delay + 'ms';
+                        card.style.backgroundColor = newBg;
+                        card.style.borderColor = newBorder;
+                    });
+                    setTimeout(function () {
+                        cards.forEach(function (card) {
+                            card.style.backgroundColor = '';
+                            card.style.borderColor = '';
+                            card.style.transition = '';
+                        });
+                    }, 900);
+                });
+            });
+        }
     });
 
     // ── Footer ──
@@ -312,6 +361,21 @@
         this.setAttribute('aria-expanded', String(!expanded));
         this.textContent = expanded ? 'About FatCow Icons' : 'Hide';
         $('footer-info').hidden = expanded;
+    });
+
+    // ── History ──
+
+    window.addEventListener('popstate', function () {
+        var q = new URLSearchParams(location.search).get('q') || '';
+        searchInput.value = q;
+        state.currentPage = 1;
+        state.filtered = q
+            ? state.allIcons.filter(function (ic) {
+                return ic.label.toLowerCase().includes(q) ||
+                    ic.keywords.some(function (kw) { return kw.includes(q); });
+            })
+            : state.allIcons.slice();
+        render();
     });
 
     // ── Init ──
