@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FatCow Icon Search - Browse 3,926 Free Icons by Keyword</title>
+    <meta name="description" content="Search and browse the FatCow Farm-Fresh icon set. 3,926 free pixel art icons in 16x16 and 32x32 sizes, colored and greyscale. Licensed under Creative Commons Attribution 3.0.">
+    <meta name="keywords" content="FatCow, icons, free icons, pixel art, Farm-Fresh, icon search, web icons, 16x16, 32x32, Creative Commons">
+    <meta name="author" content="ewauq">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://ewauq.github.io/fatcow-search/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="FatCow Icon Search">
+    <meta property="og:description" content="Search and browse 3,926 free FatCow pixel art icons by keyword. Available in multiple sizes and styles.">
+    <meta property="og:url" content="https://ewauq.github.io/fatcow-search/">
+    <meta property="og:site_name" content="FatCow Icon Search">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="FatCow Icon Search">
+    <meta name="twitter:description" content="Search and browse 3,926 free FatCow pixel art icons by keyword. Available in multiple sizes and styles.">
+
+    <meta name="theme-color" content="#2563eb">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-content">
+            <h1>FatCow Icon Search</h1>
+            <div class="header-controls">
+                <div class="search-wrap">
+                    <label for="search-input" class="sr-only">Search icons by keyword</label>
+                    <input type="search" id="search-input" placeholder="Search..." autocomplete="off">
+                    <span id="result-count" aria-live="polite"></span>
+                </div>
+                <button id="theme-toggle" type="button" aria-label="Toggle dark mode">
+                    <img class="icon-light" src="icons/colored/32x32/half_moon.png" alt="" width="16" height="16" aria-hidden="true">
+                    <img class="icon-dark" src="icons/colored/32x32/weather_sun.png" alt="" width="16" height="16" aria-hidden="true">
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="icons-grid" id="icons-grid" role="list" aria-label="Icon results"></section>
+        <nav class="pagination" id="pagination" aria-label="Results pages"></nav>
+    </main>
+
+    <div id="icon-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+        <div class="modal-backdrop"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modal-title"></h2>
+                <div class="modal-header-actions">
+                    <div id="modal-nav" class="modal-nav"></div>
+                    <button class="modal-close" aria-label="Close">&times;</button>
+                </div>
+            </div>
+            <div class="modal-preview"></div>
+            <div class="modal-variants"></div>
+        </div>
+    </div>
+
+    <footer>
+        <button id="footer-toggle" type="button" aria-expanded="false" aria-controls="footer-info">
+            About FatCow Icons
+        </button>
+        <div id="footer-info" class="footer-info" hidden>
+            <p>
+                <strong>FatCow Icons</strong> (also known as "Farm-Fresh Web Icons") is a collection
+                of 3,926 free icons originally created by <strong>FatCow Web Hosting</strong>. The set
+                was first released in the late 2000s to provide web developers and designers with a
+                comprehensive, consistent icon library. Each icon is hand-crafted in pixel art style
+                and available in 16&times;16 and 32&times;32 pixel sizes, in both colored and greyscale
+                variants. The collection covers a wide range of categories including business, nature,
+                technology, communication, commerce, and more, making it one of the most complete free
+                icon sets of its era.
+            </p>
+            <p>
+                The icons were later open-sourced and are now maintained on
+                <a href="https://github.com/gammasoft/fatcow" target="_blank" rel="noopener">GitHub</a>.
+                They remain popular for prototyping, internal tools, and retro-styled interfaces.
+            </p>
+            <p class="license">
+                Licensed under the
+                <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="noopener">Creative Commons Attribution 3.0 License</a>.
+                Icons by <a href="http://www.fatcow.com/free-icons" target="_blank" rel="noopener">FatCow Web Hosting</a>.
+            </p>
+        </div>
+        <p class="footer-credit">Built with <a href="https://claude.ai" target="_blank" rel="noopener">Claude</a> by Anthropic</p>
+    </footer>
+
+    <script src="icons-data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
