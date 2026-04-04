@@ -94,7 +94,7 @@ header {
 }
 
 h1 {
-  font-size: 1.15rem;
+  font-size: 1.4rem;
   font-weight: 700;
   letter-spacing: -0.02em;
   white-space: nowrap;
@@ -183,7 +183,7 @@ h1 {
 
 main {
   flex: 1;
-  max-width: 900px;
+  max-width: 930px;
   width: 100%;
   margin: 0 auto;
   padding: 1.25rem 1.5rem;
@@ -194,7 +194,7 @@ main {
 .icons-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(55px, 1fr));
-  gap: 0.5rem;
+  gap: 0.3rem;
 }
 
 .icon-card {
@@ -544,6 +544,15 @@ main {
 .keyword-tag:hover {
   border-color: var(--color-primary);
   color: var(--color-primary);
+}
+
+.modal-hint {
+  grid-column: 1 / -1;
+  text-align: center;
+  font-size: 0.65rem;
+  color: var(--color-text-muted);
+  margin-top: 0.3rem;
+  opacity: 0.6;
 }
 
 @keyframes fade-in {
