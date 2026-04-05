@@ -1,0 +1,29 @@
+# FatCow Icon Search
+
+> A searchable collection of 3,926 free pixel art icons from the FatCow Farm-Fresh icon set. Icons are available in 16x16 and 32x32 sizes, in colored and greyscale variants. Licensed under Creative Commons Attribution 3.0.
+
+## Icon URL Pattern
+
+Direct access to any icon follows this pattern:
+
+- `https://ewauq.github.io/fatcow-search/icons/{style}/{size}x{size}/{filename}`
+
+Where:
+- `{style}` is `colored` or `greyscale`
+- `{size}` is `16` or `32`
+- `{filename}` is the icon filename (e.g. `email.png`)
+
+Example: `https://ewauq.github.io/fatcow-search/icons/colored/32x32/email.png`
+
+## Icon Data
+
+- [Icon database](https://ewauq.github.io/fatcow-search/icons-data.js): JavaScript file containing all 3,926 icons with labels, filenames, searchable keywords, available sizes and styles. Format: `var ICONS_DATA = [...]` where each entry is `{label, filename, keywords[], availableSizes[], availableStyles[]}`.
+
+## Search
+
+- [Search interface](https://ewauq.github.io/fatcow-search/): Web UI with keyword search, supports `?q=keyword` URL parameter.
+
+## Optional
+
+- [Source repository](https://github.com/gammasoft/fatcow): Original FatCow icon repository on GitHub.
+- [License](https://creativecommons.org/licenses/by/3.0/): Creative Commons Attribution 3.0. Credit: FatCow Web Hosting.
