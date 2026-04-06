@@ -439,17 +439,51 @@ footer a:hover {
 
 /* Responsive */
 @media (max-width: 640px) {
+  .header-inner {
+    padding: 32px 16px 24px;
+  }
+
+  .header-top {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  header h1 {
+    font-size: 22px;
+  }
+
+  .bio {
+    font-size: 14px;
+  }
+
+  .container {
+    padding: 0 16px;
+  }
+
   .controls {
     flex-direction: column;
     align-items: stretch;
   }
 
   .project-card {
-    padding: 10px 8px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 12px 8px;
   }
 
   .thumb-link {
-    width: 120px;
-    height: 80px;
+    width: 100%;
+    min-width: unset;
+    height: 160px;
+  }
+
+  .project-desc {
+    -webkit-line-clamp: 3;
+  }
+
+  footer {
+    flex-direction: column;
+    gap: 4px;
   }
 }
