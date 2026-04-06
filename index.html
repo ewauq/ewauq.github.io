@@ -3,151 +3,67 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ewauq.github.io</title>
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-        background: #0a0a1a;
-        overflow: hidden;
-        font-family: "Segoe UI", system-ui, sans-serif;
-      }
-
-      .hello {
-        display: flex;
-        gap: 0.15em;
-        font-size: clamp(3rem, 10vw, 8rem);
-        font-weight: 800;
-        text-transform: uppercase;
-        cursor: default;
-      }
-
-      .hello span {
-        display: inline-block;
-        animation:
-          float 2s ease-in-out infinite,
-          colorShift 6s linear infinite;
-        animation-delay: var(--d);
-      }
-
-      @keyframes float {
-        0%,
-        100% {
-          transform: translateY(0) scale(1);
-        }
-        50% {
-          transform: translateY(-25px) scale(1.1);
-        }
-      }
-
-      @keyframes colorShift {
-        0% {
-          color: #ff6b6b;
-          text-shadow: 0 0 20px #ff6b6b88;
-        }
-        16% {
-          color: #ffa94d;
-          text-shadow: 0 0 20px #ffa94d88;
-        }
-        33% {
-          color: #ffd43b;
-          text-shadow: 0 0 20px #ffd43b88;
-        }
-        50% {
-          color: #69db7c;
-          text-shadow: 0 0 20px #69db7c88;
-        }
-        66% {
-          color: #4dabf7;
-          text-shadow: 0 0 20px #4dabf788;
-        }
-        83% {
-          color: #da77f2;
-          text-shadow: 0 0 20px #da77f288;
-        }
-        100% {
-          color: #ff6b6b;
-          text-shadow: 0 0 20px #ff6b6b88;
-        }
-      }
-
-      .particles {
-        position: fixed;
-        inset: 0;
-        pointer-events: none;
-        z-index: -1;
-      }
-
-      .particle {
-        position: absolute;
-        border-radius: 50%;
-        animation: rise linear infinite;
-        opacity: 0;
-      }
-
-      @keyframes rise {
-        0% {
-          transform: translateY(100vh) scale(0);
-          opacity: 0;
-        }
-        10% {
-          opacity: 0.8;
-        }
-        90% {
-          opacity: 0.8;
-        }
-        100% {
-          transform: translateY(-10vh) scale(1);
-          opacity: 0;
-        }
-      }
-    </style>
+    <title>Emilien (ewauq) — My Projects</title>
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <div class="particles" id="particles"></div>
-    <div class="hello" id="hello"></div>
+    <header>
+      <div class="header-inner">
+        <div class="header-top">
+          <div>
+            <h1>Emilien Wauquier</h1>
+            <p class="subtitle">Fullstack Developer</p>
+          </div>
+          <div class="availability">
+            <span class="status-dot unavailable"></span>
+            Not available for hiring
+          </div>
+        </div>
+        <p class="bio">
+          I've been passionate about web development for over 20 years, always
+          building, always tinkering. Relentless perfectionist, picky gamer, and
+          obsessive audiophile. I love crafting small, useful projects and
+          sharing them with the world. I enjoy working with AI.
+        </p>
+        <div class="contact-links">
+          <a href="https://github.com/ewauq">GitHub</a>
+          <span class="contact-sep">/</span>
+          <a href="https://www.linkedin.com/in/emilien-wauquier">LinkedIn</a>
+          <span class="contact-sep">/</span>
+          <a href="mailto:emilien.wauquier@gmail.com">Email</a>
+        </div>
+      </div>
+    </header>
 
-    <script>
-      const text = "Hello World!";
-      const container = document.getElementById("hello");
+    <div class="container">
+      <div class="controls">
+        <input type="text" id="search" placeholder="Search projects..." />
+        <div class="sort-buttons">
+          <button class="active" data-group="year">By year</button>
+          <button data-group="category">By category</button>
+        </div>
+      </div>
 
-      text.split("").forEach((char, i) => {
-        const span = document.createElement("span");
-        span.textContent = char === " " ? "\u00A0" : char;
-        span.style.setProperty("--d", `${i * 0.1}s`);
-        container.appendChild(span);
-      });
+      <div id="list">
+        <p class="state-message">Loading...</p>
+      </div>
 
-      const colors = [
-        "#ff6b6b",
-        "#ffa94d",
-        "#ffd43b",
-        "#69db7c",
-        "#4dabf7",
-        "#da77f2",
-      ];
-      const particlesContainer = document.getElementById("particles");
+      <footer>
+        <span class="footer-legend">
+          <svg viewBox="0 0 24 24" fill="currentColor" class="footer-icon">
+            <path d="M10 2l1.5 3.5L15 7l-3.5 1.5L10 12l-1.5-3.5L5 7l3.5-1.5z" />
+            <path
+              d="M18 8l1 2.2L21.2 11l-2.2 1L18 14.2 17 12l-2.2-1L17 10.2z"
+            />
+          </svg>
+          Mostly vibe-coded with AI
+        </span>
+        &middot;
+        <a href="https://github.com/ewauq">github.com/ewauq</a>
+      </footer>
+    </div>
 
-      for (let i = 0; i < 40; i++) {
-        const p = document.createElement("div");
-        p.className = "particle";
-        const size = Math.random() * 6 + 2;
-        p.style.width = size + "px";
-        p.style.height = size + "px";
-        p.style.left = Math.random() * 100 + "%";
-        p.style.background = colors[Math.floor(Math.random() * colors.length)];
-        p.style.animationDuration = Math.random() * 6 + 4 + "s";
-        p.style.animationDelay = Math.random() * 8 + "s";
-        particlesContainer.appendChild(p);
-      }
-    </script>
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
   </body>
 </html>

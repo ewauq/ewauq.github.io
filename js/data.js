@@ -1,0 +1,204 @@
+// ── Project database ──────────────────────────────────────────
+// name:        Display name
+// url:         Primary link (live site, repo, etc.)
+// description: Short description
+// category:    Web | Software | Tools | Scripts | Bots
+// date:        "YYYY-MM" — creation month
+// image:       Optional screenshot URL (default: placeholder)
+// language:    Primary programming language
+// stars:       Star / rating count (0 = hidden)
+// ─────────────────────────────────────────────────────────────
+
+const PLACEHOLDER = "https://placehold.co/120x80/f0f0f0/ccc";
+
+const PROJECTS = [
+  {
+    name: "PureFlac",
+    url: "#",
+    description:
+      "A graphical tool for FLAC forensics and sanitization: interactive spectrogram, BPM & key detection, frequency analysis, loudness measurement, transcode detection and tags edition.",
+    category: "Software",
+    date: "2026-06",
+    image: "https://placehold.co/200x130/f0f0f0/999?text=Coming+Soon",
+    language: "Python",
+    stars: 0,
+    vibecoded: true,
+    comingSoon: true,
+  },
+  {
+    name: "Audio Integrity Checker",
+    url: "https://github.com/ewauq/AudioIntegrityChecker",
+    description:
+      "A fast and lightweight Windows application for scanning audio files and identifying corruption.",
+    category: "Software",
+    date: "2026-03",
+    image: "images/aic.jpg",
+    language: "C#",
+    stars: 0,
+    vibecoded: true,
+  },
+  {
+    name: "FatCow Icon Search",
+    url: "https://ewauq.github.io/fatcow-search",
+    description: "Search engine for the FatCow icon set.",
+    category: "Tools",
+    date: "2026-04",
+    image: "images/fatcow-search.jpg",
+    language: "JavaScript",
+    stars: 0,
+    vibecoded: true,
+  },
+  {
+    name: "Scrapeflix",
+    url: "https://github.com/ewauq/scrapeflix",
+    description:
+      "A full-stack scraper for Netflix movies and TV shows, exporting titles to CSV. No longer maintained.",
+    category: "Tools",
+    date: "2024-01",
+    image: "images/scrapeflix.jpg",
+    language: "Python",
+    stars: 0,
+  },
+  {
+    name: "SoX Spectrogram Generator plugin for Nicotine+",
+    url: "https://github.com/ewauq/sox_spectrogram_generator",
+    description:
+      "A Nicotine+ plugin that generates audio spectrograms using SoX after a download completes.",
+    category: "Scripts",
+    date: "2025-01",
+    image: "images/sox-nicotine-plugin.jpg",
+    language: "Python",
+    stars: 0,
+  },
+  {
+    name: "Terraria Checklist",
+    url: "https://ewauq.github.io/terraria-checklist/",
+    description:
+      "Interactive checklist for Terraria game progression. Over 80k users since 2024.",
+    category: "Tools",
+    date: "2022-12",
+    image: "images/terraria-checklist.jpg",
+    language: "TypeScript",
+    stars: 24,
+  },
+  {
+    name: "RYM Visual Rating Bar",
+    url: "https://github.com/ewauq/rym-visual-rating-bar",
+    description:
+      "A userscript for RateYourMusic that adds a visual rating bar.",
+    category: "Scripts",
+    date: "2022-09",
+    image: "images/rym-rating-bar.jpg",
+    language: "TypeScript",
+    stars: 5,
+  },
+  {
+    name: "DoonDeath",
+    url: "https://steamcommunity.com/sharedfiles/filedetails/?id=387107587",
+    description:
+      "A Garry's Mod server addon that enhances death mechanics with realistic sounds, weapon drops, and pickup recovery.",
+    category: "Scripts",
+    date: "2015-02",
+    image: "images/doondeath.jpg",
+    language: "Lua",
+    stars: 910,
+  },
+  {
+    name: "youtube-dl-list",
+    url: "https://github.com/ewauq/youtube-dl-list",
+    description:
+      "A Python script that batch-downloads YouTube videos from a text file of URLs using youtube-dl, merging best video and audio into MP4.",
+    category: "Tools",
+    date: "2019-09",
+    image: "https://placehold.co/200x130/f0f0f0/999?text=youtube-dl-list",
+    language: "Python",
+    stars: 0,
+  },
+  {
+    name: "Kobold",
+    url: "https://github.com/ewauq/kobold",
+    description:
+      "A Discord bot skeleton built with discord.js, with event-based architecture and message logging.",
+    category: "Bots",
+    date: "2018-10",
+    image: "https://placehold.co/200x130/f0f0f0/999?text=Kobold",
+    language: "JavaScript",
+    stars: 0,
+  },
+  {
+    name: "Shruggy",
+    url: "https://github.com/ewauq/shruggy3",
+    description:
+      "A personal Discord bot with commands like 8ball, coin flip, avatar display, random images, and Steam status checker.",
+    category: "Bots",
+    date: "2017-04",
+    image: "https://placehold.co/200x130/f0f0f0/999?text=Shruggy",
+    language: "JavaScript",
+    stars: 0,
+  },
+  {
+    name: "mini-mvc",
+    url: "https://github.com/ewauq/mini-mvc",
+    description:
+      "A minimal PHP MVC framework with routing, autoloading, and a database abstraction layer. Built as a learning project.",
+    category: "Web",
+    date: "2017-03",
+    image: "https://placehold.co/200x130/f0f0f0/999?text=mini-mvc",
+    language: "PHP",
+    stars: 0,
+  },
+  {
+    name: "MovieScraper",
+    url: "https://github.com/ewauq/MovieScraper",
+    description:
+      "A PHP web scraper that extracts movie information (titles, cast, synopsis, box office) from Allocine.fr and outputs JSON or HTML.",
+    category: "Tools",
+    date: "2015-10",
+    image: "https://placehold.co/200x130/f0f0f0/999?text=MovieScraper",
+    language: "PHP",
+    stars: 1,
+  },
+  {
+    name: "ESA",
+    url: "https://github.com/ewauq/ESA",
+    description:
+      "First version of DoonDeath. A Garry's Mod Lua addon that adds weapon dropping on death, timed weapon cleanup, and custom death sounds.",
+    category: "Scripts",
+    date: "2015-01",
+    image: "https://placehold.co/200x130/f0f0f0/999?text=ESA",
+    language: "Lua",
+    stars: 0,
+  },
+];
+
+const CATEGORY_ORDER = ["Software", "Tools", "Web", "Scripts", "Bots"];
+
+const MONTHS = [
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
+];
+
+const LANG_COLORS = {
+  JavaScript: "#f1e05a",
+  TypeScript: "#3178c6",
+  Python: "#3572A5",
+  HTML: "#e34c26",
+  CSS: "#563d7c",
+  Go: "#00ADD8",
+  Rust: "#dea584",
+  Shell: "#89e051",
+  PHP: "#4F5D95",
+  "C#": "#178600",
+  Lua: "#000080",
+  Java: "#b07219",
+};
