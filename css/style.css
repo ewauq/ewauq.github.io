@@ -20,11 +20,22 @@ body {
   padding: 0 24px;
 }
 
-/* Header */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 header {
   background: #f8f8f8;
   border-bottom: 1px solid #e5e5e5;
   margin-bottom: 30px;
+  animation: fadeIn 0.5s ease both;
 }
 
 .header-inner {
@@ -115,23 +126,6 @@ header .subtitle {
   }
 }
 
-/* Fade-in animation for header */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-header {
-  animation: fadeIn 0.5s ease both;
-}
-
-/* Controls */
 .controls {
   display: flex;
   align-items: center;
@@ -193,7 +187,6 @@ header {
   border-color: #444;
 }
 
-/* Group headers */
 .group-header {
   display: flex;
   align-items: center;
@@ -224,7 +217,6 @@ header {
   background: #e5e5e5;
 }
 
-/* Project cards */
 .thumb-link {
   width: 200px;
   min-width: 200px;
@@ -252,9 +244,7 @@ header {
   align-items: center;
   gap: 20px;
   padding: 12px;
-  border: 1px solid transparent;
   border-radius: 8px;
-  transition: background 0.2s ease;
   opacity: 0;
   transform: translateY(8px);
   transition:
@@ -393,7 +383,6 @@ header {
   white-space: nowrap;
 }
 
-/* States */
 .state-message {
   text-align: center;
   padding: 48px 0;
@@ -401,14 +390,12 @@ header {
   font-size: 14px;
 }
 
-/* Footer */
 footer {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 6px;
   padding: 48px 0 32px;
-  text-align: center;
   font-size: 14px;
   color: #999;
 }
@@ -417,7 +404,6 @@ footer {
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  color: #999;
 }
 
 .footer-icon {
@@ -437,7 +423,6 @@ footer a:hover {
   text-decoration: underline;
 }
 
-/* Responsive */
 @media (max-width: 640px) {
   .header-inner {
     padding: 32px 16px 24px;

@@ -1,16 +1,3 @@
-// ── Project database ──────────────────────────────────────────
-// name:        Display name
-// url:         Primary link (live site, repo, etc.)
-// description: Short description
-// category:    Web | Software | Tools | Scripts | Bots
-// date:        "YYYY-MM" — creation month
-// image:       Optional screenshot URL (default: placeholder)
-// language:    Primary programming language
-// stars:       Star / rating count (0 = hidden)
-// ─────────────────────────────────────────────────────────────
-
-const PLACEHOLDER = "https://placehold.co/120x80/f0f0f0/ccc";
-
 const PROJECTS = [
   {
     name: "PureFlac",
