@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ewauq.github.io</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: #0a0a1a;
+        overflow: hidden;
+        font-family: "Segoe UI", system-ui, sans-serif;
+      }
+
+      .hello {
+        display: flex;
+        gap: 0.15em;
+        font-size: clamp(3rem, 10vw, 8rem);
+        font-weight: 800;
+        text-transform: uppercase;
+        cursor: default;
+      }
+
+      .hello span {
+        display: inline-block;
+        animation:
+          float 2s ease-in-out infinite,
+          colorShift 6s linear infinite;
+        animation-delay: var(--d);
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0) scale(1);
+        }
+        50% {
+          transform: translateY(-25px) scale(1.1);
+        }
+      }
+
+      @keyframes colorShift {
+        0% {
+          color: #ff6b6b;
+          text-shadow: 0 0 20px #ff6b6b88;
+        }
+        16% {
+          color: #ffa94d;
+          text-shadow: 0 0 20px #ffa94d88;
+        }
+        33% {
+          color: #ffd43b;
+          text-shadow: 0 0 20px #ffd43b88;
+        }
+        50% {
+          color: #69db7c;
+          text-shadow: 0 0 20px #69db7c88;
+        }
+        66% {
+          color: #4dabf7;
+          text-shadow: 0 0 20px #4dabf788;
+        }
+        83% {
+          color: #da77f2;
+          text-shadow: 0 0 20px #da77f288;
+        }
+        100% {
+          color: #ff6b6b;
+          text-shadow: 0 0 20px #ff6b6b88;
+        }
+      }
+
+      .particles {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: -1;
+      }
+
+      .particle {
+        position: absolute;
+        border-radius: 50%;
+        animation: rise linear infinite;
+        opacity: 0;
+      }
+
+      @keyframes rise {
+        0% {
+          transform: translateY(100vh) scale(0);
+          opacity: 0;
+        }
+        10% {
+          opacity: 0.8;
+        }
+        90% {
+          opacity: 0.8;
+        }
+        100% {
+          transform: translateY(-10vh) scale(1);
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="particles" id="particles"></div>
+    <div class="hello" id="hello"></div>
+
+    <script>
+      const text = "Hello World!";
+      const container = document.getElementById("hello");
+
+      text.split("").forEach((char, i) => {
+        const span = document.createElement("span");
+        span.textContent = char === " " ? "\u00A0" : char;
+        span.style.setProperty("--d", `${i * 0.1}s`);
+        container.appendChild(span);
+      });
+
+      const colors = [
+        "#ff6b6b",
+        "#ffa94d",
+        "#ffd43b",
+        "#69db7c",
+        "#4dabf7",
+        "#da77f2",
+      ];
+      const particlesContainer = document.getElementById("particles");
+
+      for (let i = 0; i < 40; i++) {
+        const p = document.createElement("div");
+        p.className = "particle";
+        const size = Math.random() * 6 + 2;
+        p.style.width = size + "px";
+        p.style.height = size + "px";
+        p.style.left = Math.random() * 100 + "%";
+        p.style.background = colors[Math.floor(Math.random() * colors.length)];
+        p.style.animationDuration = Math.random() * 6 + 4 + "s";
+        p.style.animationDelay = Math.random() * 8 + "s";
+        particlesContainer.appendChild(p);
+      }
+    </script>
+  </body>
+</html>
