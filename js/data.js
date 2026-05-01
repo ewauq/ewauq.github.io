@@ -13,6 +13,18 @@ const PROJECTS = [
     comingSoon: true,
   },
   {
+    name: "Spektrum Web",
+    url: "https://ewauq.github.io/spektrum-web/",
+    description:
+      "A customizable and interactive online audio spectrogram analyzer.",
+    category: "Software",
+    date: "2026-05",
+    image: "images/spectrum-web.png",
+    language: "TypeScript",
+    stars: 0,
+    vibecoded: true,
+  },
+  {
     name: "Audio Integrity Checker",
     url: "https://github.com/ewauq/AudioIntegrityChecker",
     description:
